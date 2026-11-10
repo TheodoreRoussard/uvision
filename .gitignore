@@ -1,0 +1,25 @@
+# Documents de cadrage des fondateurs : confidentiels, contiennent des noms et adresses email.
+# À partager avec l'équipe par un autre canal, pas par le dépôt.
+*.pdf
+
+# Dépendances et builds
+node_modules/
+.next/
+out/
+dist/
+
+# Variables d'environnement et secrets
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
+
+# Système et éditeurs
+.DS_Store
+.idea/
+.vscode/
+
+# Impeccable : réglages locaux
+.impeccable/config.local.json
