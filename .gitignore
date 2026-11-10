@@ -1,14 +1,14 @@
-# Documents de cadrage des fondateurs : confidentiels, contiennent des noms et adresses email.
-# À partager avec l'équipe par un autre canal, pas par le dépôt.
+# Founders' scoping documents: confidential, contain names and email addresses.
+# Share them with the team through another channel, not through the repository.
 *.pdf
 
-# Dépendances et builds
+# Dependencies and builds
 node_modules/
 .next/
 out/
 dist/
 
-# Variables d'environnement et secrets
+# Environment variables and secrets
 .env
 .env.*
 !.env.example
@@ -16,10 +16,10 @@ dist/
 # Vercel
 .vercel/
 
-# Système et éditeurs
+# System and editors
 .DS_Store
 .idea/
 .vscode/
 
-# Impeccable : réglages locaux
+# Impeccable: local settings
 .impeccable/config.local.json

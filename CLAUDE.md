@@ -1,28 +1,28 @@
 # UVISION
 
-## Documents de cadrage
+## Scoping documents
 
-Les PDF à la racine décrivent les fonctionnalités attendues de l'app (structure et périmètre, pas le design). Ils sont confidentiels et exclus du dépôt par `.gitignore` : ils n'existent que sur les machines où on les a copiés.
+The PDFs at the root describe the features expected from the app (structure and scope, not design). They are confidential and excluded from the repository by `.gitignore`: they exist only on machines where they were copied.
 
 - `ESILV PROJET UVISION.pdf`
 - `ESILV SUMMARY UVISION.pdf`
 - `Re- Project Kick-off.pdf`
 
-Ils font autorité sur le *quoi* (fonctionnalités, périmètre). `PRODUCT.md` en est le résumé orienté design : le mettre à jour si les PDF changent. Côté visuel, ils ne donnent qu'une orientation non contraignante (bleu, violet, gris, blanc) ; la direction visuelle sera fixée dans `DESIGN.md`.
+They are the authority on the *what* (features, scope). `PRODUCT.md` is their design-oriented summary: update it if the PDFs change. On the visual side, they give only a non-binding orientation (blue, purple, grey, white); the visual direction will be set in `DESIGN.md`.
 
-## Design frontend : un rôle par outil
+## Frontend design: one role per tool
 
-- Toute décision de design (direction visuelle, typographie, couleurs, layout, animation) passe par le skill `impeccable`. `PRODUCT.md` et `DESIGN.md` font autorité.
-- Ne pas invoquer `frontend-design` sur ce projet : il ferait doublon avec impeccable et ignorerait `DESIGN.md`.
-- Pour une tâche d'UI, `impeccable shape` remplace `superpowers:brainstorming`.
-- `playwright-skill` sert uniquement à vérifier : captures responsive (375 / 768 / 1440 px, thèmes clair et sombre), tests de parcours, liens. Il ne décide ni ne modifie le design.
-- Pour comparer des variantes visuelles, utiliser `impeccable live` ou `generate`, pas Playwright.
+- Every design decision (visual direction, typography, colours, layout, animation) goes through the `impeccable` skill. `PRODUCT.md` and `DESIGN.md` are the authority.
+- Do not invoke `frontend-design` on this project: it would duplicate impeccable and ignore `DESIGN.md`.
+- For a UI task, `impeccable shape` replaces `superpowers:brainstorming`.
+- `playwright-skill` is for verification only: responsive screenshots (375 / 768 / 1440 px, light and dark themes), journey tests, links. It neither decides nor changes the design.
+- To compare visual variants, use `impeccable live` or `generate`, not Playwright.
 
-## Flux de travail UI
+## UI workflow
 
-1. Cadrer : `impeccable init` (une fois), puis `impeccable shape <fonctionnalité>`.
-2. Construire avec impeccable seul.
-3. Capturer le rendu avec Playwright aux trois largeurs.
-4. Juger avec `impeccable critique` ou `audit` à partir de ces captures.
-5. Corriger avec la commande impeccable adaptée (`polish`, `layout`, `adapt`, etc.).
-6. Valider avec Playwright : parcours complets et nouvelles captures, pour confirmer l'absence de régression.
+1. Frame: `impeccable init` (once), then `impeccable shape <feature>`.
+2. Build with impeccable alone.
+3. Capture the rendered result with Playwright at the three widths.
+4. Judge with `impeccable critique` or `audit` from those screenshots.
+5. Fix with the matching impeccable command (`polish`, `layout`, `adapt`, etc.).
+6. Validate with Playwright: full journeys and new screenshots, to confirm there is no regression.

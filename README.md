@@ -1,64 +1,64 @@
 # Uvision
 
-**Réservez · Créez · Brillez**
+**Réservez · Créez · Brillez** (Book · Create · Shine)
 
-Uvision est une plateforme web de mise en relation et de réservation de professionnels des métiers de l'image. Un client y trouve un photographe ou un vidéaste selon son besoin, sa localisation et son budget, consulte son portfolio, voit ses disponibilités et réserve un créneau, sans passer par un devis.
+Uvision is a web platform for finding and booking visual professionals. A client finds a photographer or videographer that matches their need, location and budget, looks at their portfolio, sees their availability and books a slot, without going through a quote.
 
-## Ce que fait l'application
+## What the app does
 
-### Première version (MVP)
+### First version (MVP)
 
-L'objectif est un parcours complet, testable de bout en bout :
+The goal is one complete journey that can be tested end to end:
 
-1. Le client recherche un photographe ou un vidéaste.
-2. Il consulte son profil et son portfolio.
-3. Il sélectionne une prestation et un créneau disponible.
-4. Il effectue une réservation.
-5. Il réalise un paiement en environnement de test.
-6. Il retrouve sa réservation dans son espace personnel.
+1. The client searches for a photographer or videographer.
+2. They view the professional's profile and portfolio.
+3. They pick a service and an available slot.
+4. They make a booking.
+5. They pay in a test environment.
+6. They find their booking in their personal space.
 
-Fonctionnalités couvertes :
+Features covered:
 
-- **Recherche** par catégorie (mariage, événementiel, corporate, immobilier, drone…), par ville, code postal ou géolocalisation, par budget et par type de professionnel.
-- **Filtres avancés :** disponibilité, note et nombre d'avis, équipement, services supplémentaires, zone de déplacement.
-- **Profils professionnels :** portfolio, biographie, prestations et tarifs, avis clients.
-- **Réservation en ligne** avec calendrier de disponibilités et confirmation par email et SMS.
-- **Paiement sur la plateforme**, avec acompte optionnel défini par le professionnel.
-- **Espaces personnels** pour le client et pour le professionnel.
+- **Search** by category (wedding, events, corporate, real estate, drone…), by city, postcode or geolocation, by budget and by type of professional.
+- **Advanced filters:** availability, rating and number of reviews, equipment, extra services, travel area.
+- **Professional profiles:** portfolio, biography, services and prices, client reviews.
+- **Online booking** with an availability calendar and confirmation by email and SMS.
+- **Payment on the platform**, with an optional deposit set by the professional.
+- **Personal spaces** for the client and for the professional.
 
-### Évolutions prévues
+### Planned later
 
-- Code de validation de séance, qui débloque le paiement du professionnel.
-- Messagerie entre client et professionnel.
-- Graine de Champion : points, niveaux, classements et badges pour les professionnels.
-- Uvision Award : concours photo et vidéo.
-- Uvision Ads : emplacements publicitaires pour les marques.
-- Comptes Entreprise et École, appels d'offres.
-- Extension à d'autres métiers de l'image (graphistes, monteurs, motion designers…).
+- Session validation code, which releases the professional's payment.
+- Messaging between client and professional.
+- Graine de Champion: points, levels, rankings and badges for professionals.
+- Uvision Award: photo and video competition.
+- Uvision Ads: advertising slots for brands.
+- Company and School accounts, calls for tenders.
+- Extension to other visual professions (graphic designers, video editors, motion designers…).
 
-### Modèle économique
+### Business model
 
-Hypothèse de travail, à confirmer avec les fondateurs : offre freemium pour les professionnels et commission sur les réservations.
+Working assumption, to be confirmed with the founders: a freemium offer for professionals and a commission on bookings.
 
-## Stack technique
+## Tech stack
 
-| Couche | Choix |
+| Layer | Choice |
 |---|---|
 | Frontend | [Next.js](https://nextjs.org) + TypeScript + [Tailwind CSS](https://tailwindcss.com) |
-| Base de données | [PostgreSQL](https://www.postgresql.org) |
-| Authentification | [Better Auth](https://www.better-auth.com) |
-| Déploiement | [Vercel](https://vercel.com) |
-| Paiement | À décider (Stripe Connect à l'étude) |
+| Database | [PostgreSQL](https://www.postgresql.org) |
+| Authentication | [Better Auth](https://www.better-auth.com) |
+| Deployment | [Vercel](https://vercel.com) |
+| Payment | To be decided (Stripe Connect under study) |
 
-## État du projet
+## Project status
 
-Le projet démarre : ce dépôt ne contient pas encore de code. Les instructions d'installation et de lancement seront ajoutées avec la première version de l'application.
+The project is just starting: this repository contains no code yet. Installation and run instructions will be added with the first version of the app.
 
-## Documentation du dépôt
+## Repository documentation
 
-- [`PRODUCT.md`](PRODUCT.md) : contexte produit (utilisateurs, périmètre, contraintes, décisions ouvertes).
-- [`CLAUDE.md`](CLAUDE.md) : règles de travail pour le design et la vérification de l'interface.
+- [`PRODUCT.md`](PRODUCT.md): product context (users, scope, constraints, open decisions).
+- [`CLAUDE.md`](CLAUDE.md): working rules for designing and verifying the interface.
 
-## Équipe
+## Team
 
-Projet mené par une équipe d'étudiants de l'ESILV pour les cofondateurs d'Uvision.
+Project carried out by a team of ESILV students for the cofounders of Uvision.
