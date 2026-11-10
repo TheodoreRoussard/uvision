@@ -8,120 +8,121 @@ web
 
 ## Stack
 
-Décidée par l'équipe :
+Decided by the team:
 
-- **Frontend :** Next.js + TypeScript + Tailwind CSS.
-- **Base de données :** PostgreSQL (modèle de données et mise en place par Parikshit).
-- **Authentification :** Better Auth.
-- **Déploiement :** Vercel.
+- **Frontend:** Next.js + TypeScript + Tailwind CSS.
+- **Database:** PostgreSQL (data model and setup by Parikshit).
+- **Authentication:** Better Auth.
+- **Deployment:** Vercel.
 
-Encore ouvert : le prestataire de paiement (Stripe Connect à l'étude).
+Still open: the payment provider (Stripe Connect under study).
 
 ## Users
 
-**Utilisateur principal (MVP) : le client particulier** qui veut réserver un photographe ou un vidéaste pour un besoin précis (mariage, événement, portrait, etc.), près de chez lui et dans son budget. Il arrive avec un besoin, une localisation et une fourchette de prix, et veut passer de la recherche à la réservation sans attendre un devis.
+**Primary user (MVP): the individual client** who wants to book a photographer or videographer for a specific need (wedding, event, portrait, etc.), near them and within their budget. They arrive with a need, a location and a price range, and want to go from search to booking without waiting for a quote.
 
-**Utilisateur secondaire (MVP) : le professionnel** (photographe, vidéaste, ou les deux), y compris étudiant, qui veut trouver des clients, présenter son portfolio et gérer ses disponibilités et réservations.
+**Secondary user (MVP): the professional** (photographer, videographer, or both), including students, who wants to find clients, show their portfolio and manage their availability and bookings.
 
-**Audiences futures, hors MVP :** entreprises (marques, agences, PME, startups) qui publient des appels d'offres, et écoles ou académies de formation à l'image qui gèrent leurs étudiants.
+**Future audiences, outside the MVP:** companies (brands, agencies, SMEs, startups) that publish calls for tenders, and schools or academies teaching visual professions that manage their students.
 
 ## Product Purpose
 
-Uvision est une plateforme de mise en relation et de réservation de professionnels des métiers de l'image. Le client choisit un créatif, voit ses disponibilités et réserve un créneau.
+Uvision is a platform for finding and booking visual professionals. The client chooses a creative, sees their availability and books a slot.
 
-Elle existe parce qu'accéder à un créatif est aujourd'hui lent et incertain : devis, échanges, attente.
+It exists because reaching a creative is slow and uncertain today: quotes, back-and-forth, waiting.
 
-Succès du MVP : un parcours complet et testable de bout en bout.
+MVP success: one complete journey that can be tested end to end.
 
-1. Le client recherche un photographe ou un vidéaste.
-2. Il consulte son profil et son portfolio.
-3. Il sélectionne une prestation et un créneau disponible.
-4. Il effectue une réservation.
-5. Il réalise un paiement en environnement de test.
-6. Il retrouve sa réservation dans son espace personnel.
+1. The client searches for a photographer or videographer.
+2. They view the professional's profile and portfolio.
+3. They pick a service and an available slot.
+4. They make a booking.
+5. They pay in a test environment.
+6. They find their booking in their personal space.
 
 ## Positioning
 
-Réservation instantanée d'un créatif visuel, sans devis, sur une plateforme spécialisée dans les métiers de l'image. L'ambition déclarée est de créer un standard de réservation pour ce marché fragmenté, comme Planity et Doctolib l'ont fait dans leurs secteurs.
+Instant booking of a visual creative, without a quote, on a platform specialised in visual professions. The stated ambition is to create a booking standard for this fragmented market, as Planity and Doctolib did in their sectors.
 
-Ce que les voisins ne font pas : les réseaux sociaux donnent de la visibilité sans convertir en réservation ; les plateformes freelance généralistes sont jugées complexes et saturées.
+What neighbours do not do: social networks give visibility without converting it into bookings; general freelance platforms are seen as complex and saturated.
 
 ## Operating Context
 
-- Usage sur mobile et sur ordinateur.
-- Marché de départ : la France. L'international est une ambition à terme.
-- Le client cherche par ville, code postal ou géolocalisation, avec une carte interactive des résultats.
-- Le jour de la prestation, client et professionnel sont ensemble sur place : c'est là que la séance est validée par un code (voir ci-dessous).
-- Projet mené par une équipe étudiante pour deux cofondateurs ; le résultat doit pouvoir être repris après leur intervention (code, maquettes, documentation).
+- Used on mobile and on desktop.
+- Starting market: France. International expansion is a longer-term ambition.
+- The client searches by city, postcode or geolocation, with an interactive map of results.
+- On the day of the session, client and professional are together on site: that is where the session is validated with a code (see below).
+- The project is run by a student team for two cofounders; the result must be easy to take over after the team leaves (code, mockups, documentation).
 
 ## Capabilities and Constraints
 
-### Dans le MVP
+### In the MVP
 
-- **Recherche** par catégorie, localisation, budget et type de professionnel ; possibilité de chercher un professionnel par son nom.
-- **Catégories :** Événementiel, Sport, Corporate / Entreprise, Mode & Portrait, Immobilier, Produits / E-commerce, Lifestyle / Réseaux sociaux, Photobooth, Création vidéo / films, Drone, Voyage / nature, Technique / spécialisé.
-- **Tranches de budget :** moins de 100 €, 100–200 €, 200–500 €, 500 € et plus, montant personnalisé.
-- **Types de professionnel :** Photographe, Vidéaste, Photographe + Vidéaste.
-- **Filtres avancés**, visibles après la première recherche : disponibilité (immédiate ou à une date), note et nombre d'avis, équipement (drone, caméra 4K…), services supplémentaires (albums imprimés…), zone de déplacement.
-- **Carte de profil** dans les résultats : photo de couverture, nom et note, type de service, prix de base ou forfait, disponibilité, aperçu du portfolio.
-- **Profil complet :** portfolio, biographie, description, tarifs détaillés, avis clients.
-- **Réservation :** choix de la prestation et de la date, paiement en ligne, confirmation par email et SMS, suivi dans l'espace personnel du client et du professionnel.
-- **Acompte**, au choix du professionnel : activable ou non, montant fixe ou pourcentage, limité à certaines prestations, avec conditions de remboursement. Le client voit clairement le montant dû immédiatement, le solde et les échéances.
-- **Inscription et connexion**, profils client et professionnel, calendrier du professionnel.
+- **Search** by category, location, budget and type of professional; a professional can also be searched by name.
+- **Categories:** Events, Sport, Corporate / Business, Fashion & Portrait, Real estate, Products / E-commerce, Lifestyle / Social media, Photobooth, Video / film production, Drone, Travel / nature, Technical / specialised.
+- **Budget ranges:** under €100, €100–200, €200–500, €500 and over, custom amount.
+- **Types of professional:** Photographer, Videographer, Photographer + Videographer.
+- **Advanced filters**, visible after the first search: availability (immediate or on a date), rating and number of reviews, equipment (drone, 4K camera…), extra services (printed albums…), travel area.
+- **Profile card** in the results: cover photo, name and rating, type of service, base price or package, availability, portfolio preview.
+- **Full profile:** portfolio, biography, description, detailed prices, client reviews.
+- **Booking:** choice of service and date, online payment, confirmation by email and SMS, tracking in the personal space of both client and professional.
+- **Deposit**, at the professional's choice: can be turned on or off, fixed amount or percentage, limited to certain services, with refund conditions. The client clearly sees the amount due now, the balance and the due dates.
+- **Sign-up and sign-in**, client and professional profiles, professional's calendar.
 
-### Prévu après le MVP
+### Planned after the MVP
 
-- **Code de validation :** le client reçoit un code unique à la réservation et le donne au professionnel en fin de séance ; la saisie du code valide la séance et débloque le paiement.
-- **Messagerie** entre client et professionnel.
-- **Graine de Champion (GDC) :** points par shooting, 50 niveaux, cinq groupes (Apprentis, Confirmés, Experts, Élite, Champions), classements national et international, badges, récompenses annuelles.
-- **Uvision Award :** concours photo et vidéo deux fois par an, réservé aux professionnels, avec vote des inscrits.
-- **Uvision Ads :** emplacements publicitaires en carrousel pour des marques, sur l'accueil, la recherche et le tableau de bord professionnel.
-- **Comptes Entreprise et École**, appels d'offres et casting.
-- Favoris, FAQ, blog, page partenaires, « le saviez-vous », récapitulatif annuel, comparaison de professionnels, lien vers un portfolio Behance, codes promo, désactivation temporaire de compte.
-- Extension à d'autres métiers de l'image : graphistes, monteurs, motion designers, illustrateurs, retoucheurs, créateurs de contenu.
-- Recommandations par intelligence artificielle.
+- **Validation code:** the client receives a unique code when booking and gives it to the professional at the end of the session; entering the code validates the session and releases the payment.
+- **Messaging** between client and professional.
+- **Graine de Champion (GDC):** points per shoot, 50 levels, five groups (Apprentis, Confirmés, Experts, Élite, Champions), national and international rankings, badges, yearly rewards.
+- **Uvision Award:** photo and video competition twice a year, for professionals only, with voting by registered users.
+- **Uvision Ads:** carousel advertising slots for brands, on the home page, the search page and the professional dashboard.
+- **Company and School accounts**, calls for tenders and casting.
+- Favourites, FAQ, blog, partners page, « le saviez-vous » (did you know), yearly recap, comparison of professionals, link to a Behance portfolio, promo codes, temporary account deactivation.
+- Extension to other visual professions: graphic designers, video editors, motion designers, illustrators, retouchers, content creators.
+- Recommendations by artificial intelligence.
 
-### Contraintes
+### Constraints
 
-- **Vérification du professionnel :** identité, téléphone vérifié par SMS, pièce d'identité, statut (SIRET, facultatif pour les étudiants), IBAN, double authentification.
-- **RGPD** et protection des données, en particulier les pièces d'identité et les données de paiement.
-- **Paiement** via une solution de type marketplace ; Stripe Connect est à l'étude, rien n'est arrêté.
+- **Professional verification:** identity, phone verified by SMS, identity document, status (SIRET number, optional for students), IBAN, two-factor authentication.
+- **GDPR** and data protection, especially identity documents and payment data.
+- **Payment** through a marketplace-type solution; Stripe Connect is under study, nothing is settled.
 
-### Hypothèses de travail
+### Working assumptions
 
-Retenues par l'équipe pour avancer, à faire confirmer par les fondateurs car les documents sources se contredisent sur ces points.
+Adopted by the team to move forward, to be confirmed by the founders because the source documents contradict each other on these points.
 
-- **Circuit de paiement :** le client paie sur la plateforme, pas directement au professionnel.
-- **Modèle de revenus :** freemium pour les professionnels, plus une commission sur les réservations. Le contenu de l'offre gratuite et de l'offre payante, ainsi que le taux de commission, ne sont pas définis. Les frais annuels du cahier des charges (24 €/an étudiants, 48 €/an pros) ne sont pas repris tels quels.
+- **Payment flow:** the client pays on the platform, not directly to the professional.
+- **Revenue model:** freemium for professionals, plus a commission on bookings. What the free and paid offers contain, and the commission rate, are not defined. The yearly fees in the specification (€24/year for students, €48/year for professionals) are not carried over as they stand.
 
-### Décisions ouvertes
+### Open decisions
 
-Les documents sources se contredisent ou restent incomplets sur ces points. Ne rien inventer : demander avant de concevoir un écran qui en dépend.
+The source documents contradict each other or are incomplete on these points. Invent nothing: ask before designing a screen that depends on one of them.
 
-- **Devis :** la promesse est « sans devis », mais une case « PROJET » du calendrier prévoit des tarifs sur devis (clips, shootings à l'étranger).
-- **Nom :** « Uvision » partout, « YouVision » mentionné une fois.
-- **GDC :** rôle de la rapidité dans le score, avantages des récompenses (« à définir »), et règle des niveaux (annoncés comme ne revenant jamais à zéro alors que le score de carrière peut baisser).
+- **Quotes:** the promise is "no quotes", but a « PROJET » (project) slot in the calendar allows prices on quote (music videos, shoots abroad).
+- **Name:** "Uvision" everywhere, "YouVision" mentioned once.
+- **GDC:** the role of speed in the score, the benefits attached to rewards ("to be defined"), and the level rule (levels are said never to reset to zero, yet the career score can go down).
+- **Interface language:** the source documents are in French and the starting market is France, but no document states the language or languages of the interface.
 
 ## Brand Commitments
 
-- **Nom :** Uvision.
-- **Slogan :** « Réservez * Créez * Brillez ».
-- **Formule de positionnement :** « Simple. Rapide. Instantané. »
-- **Couleurs :** bleu, violet, gris et blanc sont une orientation initiale des fondateurs, explicitement non contraignante.
-- **Liberté créative :** il n'existe ni logo, ni mascotte, ni charte graphique, ni maquette. Les fondateurs laissent volontairement l'équipe proposer sa vision ; logo, mascotte et charte font partie des pistes à explorer.
+- **Name:** Uvision.
+- **Slogan:** « Réservez * Créez * Brillez » (Book, Create, Shine). The slogan exists in French only.
+- **Positioning line:** « Simple. Rapide. Instantané. » (Simple. Fast. Instant.) In French only.
+- **Colours:** blue, purple, grey and white are the founders' initial orientation, explicitly not binding.
+- **Creative freedom:** there is no logo, mascot, brand guidelines or mockup. The founders deliberately leave the team free to propose its vision; logo, mascot and guidelines are among the directions to explore.
 
 ## Evidence on Hand
 
-- `ESILV PROJET UVISION.pdf` : cahier des charges fonctionnel (19 pages).
-- `ESILV SUMMARY UVISION.pdf` : résumé exécutif (équipe, projet, avantages, clientèle).
-- `Re- Project Kick-off.pdf` : mail de lancement des fondateurs (vision, priorités, livrables).
+- `ESILV PROJET UVISION.pdf`: functional specification (19 pages).
+- `ESILV SUMMARY UVISION.pdf`: executive summary (team, project, advantages, customers).
+- `Re- Project Kick-off.pdf`: the founders' kick-off email (vision, priorities, deliverables).
 
-Absences à ne pas combler par de l'invention : aucun logo, aucune photo ou vidéo de portfolio, aucun professionnel réel inscrit, aucun avis ou témoignage, aucun chiffre d'usage, aucun partenariat confirmé avec une marque ou une école (Canon, Sony, etc. sont cités comme cibles publicitaires, pas comme partenaires).
+Gaps that must not be filled with invention: no logo, no portfolio photos or videos, no real registered professional, no review or testimonial, no usage figures, no confirmed partnership with a brand or school (Canon, Sony, etc. are named as advertising targets, not as partners).
 
 ## Product Principles
 
-1. **De la recherche à la réservation sans attente.** Chaque étape qui ressemble à une demande de devis ou à un aller-retour est un échec du produit.
-2. **Le travail du professionnel est la preuve.** Le portfolio, les avis et le prix portent la décision du client.
-3. **L'argent est toujours lisible.** Prix, acompte, solde et conditions de remboursement sont visibles avant de s'engager.
-4. **La confiance se protège des deux côtés.** Professionnels vérifiés pour le client, paiement garanti pour le professionnel.
-5. **Un parcours complet avant des fonctionnalités en plus.** Le MVP prime sur la gamification, la publicité et les concours.
+1. **From search to booking without waiting.** Any step that feels like a quote request or a back-and-forth is a product failure.
+2. **The professional's work is the proof.** Portfolio, reviews and price carry the client's decision.
+3. **Money is always readable.** Price, deposit, balance and refund conditions are visible before committing.
+4. **Trust is protected on both sides.** Verified professionals for the client, guaranteed payment for the professional.
+5. **A complete journey before extra features.** The MVP comes before gamification, advertising and competitions.
