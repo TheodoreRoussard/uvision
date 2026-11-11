@@ -87,6 +87,8 @@ What neighbours do not do: social networks give visibility without converting it
 - **GDPR** and data protection, especially identity documents and payment data.
 - **Payment** through a marketplace-type solution; Stripe Connect is under study, nothing is settled.
 
+- **Interface languages:** French and English (team decision). Every screen must work in both, including longer French strings. Which language is shown by default is not defined.
+
 ### Working assumptions
 
 Adopted by the team to move forward, to be confirmed by the founders because the source documents contradict each other on these points.
@@ -101,8 +103,6 @@ The source documents contradict each other or are incomplete on these points. In
 - **Quotes:** the promise is "no quotes", but a « PROJET » (project) slot in the calendar allows prices on quote (music videos, shoots abroad).
 - **Name:** "Uvision" everywhere, "YouVision" mentioned once.
 - **GDC:** the role of speed in the score, the benefits attached to rewards ("to be defined"), and the level rule (levels are said never to reset to zero, yet the career score can go down).
-- **Interface language:** the source documents are in French and the starting market is France, but no document states the language or languages of the interface.
-
 ## Brand Commitments
 
 - **Name:** Uvision.
