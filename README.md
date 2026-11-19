@@ -10,6 +10,7 @@ Uvision is a web platform for finding and booking visual professionals. A client
 
 The goal is one complete journey that can be tested end to end:
 
+(1) Direct choice
 1. The client searches for a photographer or videographer.
 2. They view the professional's profile and portfolio.
 3. They pick a service and an available slot.
@@ -17,6 +18,12 @@ The goal is one complete journey that can be tested end to end:
 5. They pay in a test environment.
 6. They find their booking in their personal space.
 
+(2) Posts
+1. The client post their needs and conditions
+2. The post appear on the professionals feed (based on the filters and the photography categories, e.g availability)
+3. The professional choose which post they want to attend
+4. Payment transfered when the service is booked (to see)
+5. They find their booking in their personal space.
 Features covered:
 
 - **Search** by category (wedding, events, corporate, real estate, drone…), by city, postcode or geolocation, by budget and by type of professional.
@@ -29,7 +36,7 @@ Features covered:
 ### Planned later
 
 - Session validation code, which releases the professional's payment.
-- Messaging between client and professional.
+- Messaging between client and professional (priomordial)
 - Graine de Champion: points, levels, rankings and badges for professionals.
 - Uvision Award: photo and video competition.
 - Uvision Ads: advertising slots for brands.
@@ -40,6 +47,10 @@ Features covered:
 
 Working assumption, to be confirmed with the founders: a freemium offer for professionals and a commission on bookings.
 
+**Commissions :** 
+- 5% for professionals
+- 2% for students from associated schools
+
 ## Tech stack
 
 | Layer | Choice |
@@ -48,7 +59,7 @@ Working assumption, to be confirmed with the founders: a freemium offer for prof
 | Database | [PostgreSQL](https://www.postgresql.org) |
 | Authentication | [Better Auth](https://www.better-auth.com) |
 | Deployment | [Vercel](https://vercel.com) |
-| Payment | To be decided (Stripe Connect under study) |
+| Payment | Stripe Connect |
 
 ## Project status
 
