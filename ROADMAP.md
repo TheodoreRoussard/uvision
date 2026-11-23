@@ -126,7 +126,15 @@ Feature freeze: only fixes from the user tests and the security report.
 **Milestone M6 done:** a beta ready to go to production. Demo at follow-up meeting 6.
 
 ### S9 — Showroom and handover (29/03 – 05/04)
-Demo script and data, showroom material, and the handover pack from section 6 of the kick-off email: code and access, diagrams, mockups, documentation, tests and anomalies, security report, payment documentation, feature status, next steps.
+The handover pack from section 6 of the kick-off email, split by owner.
+
+| Who | Deliverable |
+|---|---|
+| Parikshit | Installation instructions; access to the code and environments for the founders |
+| Abdrahmane | Final security report and remaining risks |
+| Maya | Showroom material; recommendations for what comes next |
+| Alexandre | Demo script and demo data |
+| Théodore | Feature status (done, incomplete, not started); roadmap for the next steps |
 
 ## Kick-off deliverables by owner
 
