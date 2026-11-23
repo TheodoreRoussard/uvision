@@ -14,8 +14,7 @@ Decided by the team:
 - **Database:** PostgreSQL (data model and setup by Parikshit).
 - **Authentication:** Better Auth.
 - **Deployment:** Vercel.
-
-Still open: the payment provider (Stripe Connect under study).
+- **Payment:** Stripe Connect; clients pay on the platform (team decision, to confirm with the founders).
 
 ## Users
 
@@ -49,8 +48,8 @@ What neighbours do not do: social networks give visibility without converting it
 ## Operating Context
 
 - Used on mobile and on desktop.
-- Starting market: France. International expansion is a longer-term ambition.
-- The client searches by city, postcode or geolocation, with an interactive map of results.
+- Starting market: all of France, all twelve categories. International expansion is a longer-term ambition.
+- In the MVP, the client searches by city or postcode. Geolocation and an interactive map of results come after the MVP.
 - On the day of the session, client and professional are together on site: that is where the session is validated with a code (see below).
 - The project is run by a student team for two cofounders; the result must be easy to take over after the team leaves (code, mockups, documentation).
 
@@ -65,14 +64,16 @@ What neighbours do not do: social networks give visibility without converting it
 - **Advanced filters**, visible after the first search: availability (immediate or on a date), rating and number of reviews, equipment (drone, 4K camera…), extra services (printed albums…), travel area.
 - **Profile card** in the results: cover photo, name and rating, type of service, base price or package, availability, portfolio preview.
 - **Full profile:** portfolio, biography, description, detailed prices, client reviews.
-- **Booking:** choice of service and date, online payment, confirmation by email and SMS, tracking in the personal space of both client and professional.
+- **Reviews:** any client whose booking is confirmed can leave a review (team decision, to confirm with the founders).
+- **Booking:** choice of service and date, online payment, confirmation by email, tracking in the personal space of both client and professional.
+- **Messaging** between client and professional, on the platform.
 - **Deposit**, at the professional's choice: can be turned on or off, fixed amount or percentage, limited to certain services, with refund conditions. The client clearly sees the amount due now, the balance and the due dates.
 - **Sign-up and sign-in**, client and professional profiles, professional's calendar.
 
 ### Planned after the MVP
 
 - **Validation code:** the client receives a unique code when booking and gives it to the professional at the end of the session; entering the code validates the session and releases the payment.
-- **Messaging** between client and professional.
+- **SMS confirmation** of bookings.
 - **Graine de Champion (GDC):** points per shoot, 50 levels, five groups (Apprentis, Confirmés, Experts, Élite, Champions), national and international rankings, badges, yearly rewards.
 - **Uvision Award:** photo and video competition twice a year, for professionals only, with voting by registered users.
 - **Uvision Ads:** carousel advertising slots for brands, on the home page, the search page and the professional dashboard.
@@ -83,9 +84,9 @@ What neighbours do not do: social networks give visibility without converting it
 
 ### Constraints
 
-- **Professional verification:** identity, phone verified by SMS, identity document, status (SIRET number, optional for students), IBAN, two-factor authentication.
+- **Professional verification:** light in the MVP (verified phone, identity check through the payment provider). The full target, after the MVP: identity document, status (SIRET number, optional for students), IBAN, two-factor authentication.
 - **GDPR** and data protection, especially identity documents and payment data.
-- **Payment** through a marketplace-type solution; Stripe Connect is under study, nothing is settled.
+- **Payment** through Stripe Connect, a marketplace-type solution.
 
 - **Interface languages:** French and English (team decision). Every screen must work in both, including longer French strings. Which language is shown by default is not defined.
 
@@ -94,7 +95,7 @@ What neighbours do not do: social networks give visibility without converting it
 Adopted by the team to move forward, to be confirmed by the founders because the source documents contradict each other on these points.
 
 - **Payment flow:** the client pays on the platform, not directly to the professional.
-- **Revenue model:** freemium for professionals, plus a commission on bookings. What the free and paid offers contain, and the commission rate, are not defined. The yearly fees in the specification (€24/year for students, €48/year for professionals) are not carried over as they stand.
+- **Revenue model:** freemium for professionals, plus a 5% commission on bookings. What the free and paid offers contain, and who pays the commission (client, professional or both), are not defined. The yearly fees in the specification (€24/year for students, €48/year for professionals) are not carried over as they stand.
 
 ### Open decisions
 
@@ -102,6 +103,7 @@ The source documents contradict each other or are incomplete on these points. In
 
 - **Quotes:** the promise is "no quotes", but a « PROJET » (project) slot in the calendar allows prices on quote (music videos, shoots abroad).
 - **Name:** "Uvision" everywhere, "YouVision" mentioned once.
+- **Booking confirmation:** confirmed automatically once paid, or after the professional accepts? This decides when reviews open.
 - **GDC:** the role of speed in the score, the benefits attached to rewards ("to be defined"), and the level rule (levels are said never to reset to zero, yet the career score can go down).
 ## Brand Commitments
 
@@ -116,8 +118,10 @@ The source documents contradict each other or are incomplete on these points. In
 - `ESILV PROJET UVISION.pdf`: functional specification (19 pages).
 - `ESILV SUMMARY UVISION.pdf`: executive summary (team, project, advantages, customers).
 - `Re- Project Kick-off.pdf`: the founders' kick-off email (vision, priorities, deliverables).
+- `ÉTUDE-Créateurs-visuels-️.pdf`: survey of 50 visual creatives (November 2026), summarised in `PRD.md`.
+- `PRD.md`: MVP requirements; `ROADMAP.md`: sprint plan to the showroom on 6 April 2027.
 
-Gaps that must not be filled with invention: no logo, no portfolio photos or videos, no real registered professional, no review or testimonial, no usage figures, no confirmed partnership with a brand or school (Canon, Sony, etc. are named as advertising targets, not as partners).
+Gaps that must not be filled with invention: no logo, no portfolio photos or videos, no real registered professional, no review or testimonial, no client-side data, no usage figures, no confirmed partnership with a brand or school (Canon, Sony, etc. are named as advertising targets, not as partners).
 
 ## Product Principles
 
