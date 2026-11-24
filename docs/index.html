@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Uvision MVP roadmap to the 6 April 2027 showroom: project status, forecast Gantt chart, sprints S0 to S9 and deliverables per team member.">
+<title>Uvision Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: a status band answers "where are we" first; one reading column; the Gantt scrolls inside its own frame with a sticky label column; sprints read as a dated ledger. */
+:root{
+  --bg:#f5f6f9; --surface:#ffffff; --fg:#161a2b; --muted:#555d70; --line:#dde1ea; --line-strong:#c4cad7; --ink-soft:#eceef5;
+  --c-found:#626a7e; --c-design:#7448c9; --c-product:#3046c9; --c-quality:#0b7366; --c-deliver:#a4500a;
+  --school:#dfe2ea; --school-fg:#353c51; --today:#c8323f; --bar-fg:#ffffff; --focus:#3046c9;
+  --font-display:"Space Grotesk",ui-sans-serif,system-ui,sans-serif;
+  --font-body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --label-w:200px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10131d; --surface:#171b28; --fg:#e8eaf2; --muted:#9aa1b5; --line:#2a3042; --line-strong:#3a4157; --ink-soft:#1f2434;
+  --c-found:#8a92a8; --c-design:#a985f0; --c-product:#7b8eff; --c-quality:#3cc2ad; --c-deliver:#f0954a;
+  --school:#2c3246; --school-fg:#c9cee0; --today:#ff6b7c; --bar-fg:#10131d; --focus:#8c9cff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10131d; --surface:#171b28; --fg:#e8eaf2; --muted:#9aa1b5; --line:#2a3042; --line-strong:#3a4157; --ink-soft:#1f2434;
+  --c-found:#8a92a8; --c-design:#a985f0; --c-product:#7b8eff; --c-quality:#3cc2ad; --c-deliver:#f0954a;
+  --school:#2c3246; --school-fg:#c9cee0; --today:#ff6b7c; --bar-fg:#10131d; --focus:#8c9cff; color-scheme:dark}
+
+*{box-sizing:border-box}
+::selection{background:var(--c-product);color:var(--bar-fg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+a{color:var(--c-product);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-0.01em}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
+p{margin:0}
+.lede{color:var(--muted);max-width:62ch;font-size:16px}
+.num{font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:20px}
+.section-head{display:flex;flex-direction:column;gap:6px}
+
+/* Header */
+header{display:flex;flex-direction:column;gap:18px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;color:var(--muted);font-size:14px}
+.facts b{color:var(--fg);font-weight:600}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;margin:0;font-size:14px}
+.howto div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.howto dt{font-weight:600}
+.howto dd{margin:0;color:var(--muted)}
+
+/* Status band */
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.st{padding:18px 20px;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--line);min-width:0}
+.st:last-child{border-right:0}
+.st-k{font-size:13px;color:var(--muted)}
+.st-v{font-family:var(--font-display);font-size:19px;font-weight:600;line-height:1.25}
+.st-d{font-size:14px;color:var(--muted)}
+.st-d b{color:var(--fg);font-weight:600}
+@media (max-width:760px){.st{border-right:0;border-bottom:1px solid var(--line)}.st:last-child{border-bottom:0}}
+
+/* Journey */
+.journey{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.step{padding:16px 14px;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--line);min-width:0}
+.step:last-child{border-right:0}
+.step .n{font-family:var(--font-display);font-weight:700;color:var(--c-product);font-size:20px}
+.step .t{font-weight:600;font-size:14px;line-height:1.3}
+.step .m{font-size:13px;color:var(--muted)}
+.journey-note{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.journey{grid-template-columns:repeat(2,minmax(0,1fr))}.step{border-bottom:1px solid var(--line)}.step:nth-child(2n){border-right:0}.step:nth-last-child(-n+2){border-bottom:0}}
+
+/* People filter */
+.filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filter span{font-size:13px;color:var(--muted);margin-right:4px}
+.chip{font:inherit;font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip:hover{border-color:var(--fg)}
+.chip[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.legend i.dash{background:transparent;border:1.5px dashed var(--muted)}
+
+/* Gantt */
+.gantt-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);scrollbar-color:var(--line-strong) transparent}
+.gantt{position:relative;min-width:980px}
+.g-row{display:grid;grid-template-columns:var(--label-w) 1fr;align-items:stretch;min-height:36px;border-bottom:1px solid var(--line);transition:opacity .2s}
+.g-row:last-child{border-bottom:0}
+.g-label{position:sticky;left:0;z-index:3;background:var(--surface);border-right:1px solid var(--line);padding:7px 12px 7px 14px;font-size:13px;line-height:1.25;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.g-label .who{display:block;font-size:11.5px;color:var(--muted)}
+.g-track{position:relative;min-height:36px}
+.g-head .g-track{min-height:28px}
+.g-head .g-label{font-size:12px;color:var(--muted);font-weight:600}
+.cell{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);border-left:1px solid var(--line);white-space:nowrap;overflow:hidden}
+.cell.scell{font-weight:600;color:var(--fg)}
+.cell.scell.alt{background:var(--bg)}
+.bar{position:absolute;top:8px;bottom:8px;border-radius:5px;display:flex;align-items:center;padding:0 8px;font-size:12px;font-weight:600;color:var(--bar-fg);min-width:0}
+.bar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.bar.found{background:var(--c-found)} .bar.design{background:var(--c-design)} .bar.product{background:var(--c-product)}
+.bar.quality{background:var(--c-quality)} .bar.deliver{background:var(--c-deliver)}
+.bar.light{background:transparent;border:1.5px dashed;font-weight:500}
+.bar.light.design{border-color:var(--c-design);color:var(--c-design)}
+.bar.light.quality{border-color:var(--c-quality);color:var(--c-quality)}
+.bar.light.deliver{border-color:var(--c-deliver);color:var(--c-deliver)}
+.school{position:absolute;top:7px;bottom:7px;border-radius:4px;background:var(--school);color:var(--school-fg);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;padding:0 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.diamond{position:absolute;top:50%;width:16px;height:16px;background:var(--c-deliver);transform:translate(-50%,-50%) rotate(45deg);border-radius:2px}
+.overlay{position:absolute;bottom:0;left:var(--label-w);right:0;pointer-events:none;z-index:2}
+.vline{position:absolute;top:0;bottom:0;width:0;border-left:2px solid var(--today)}
+.vline span{position:absolute;top:5px;left:5px;font-size:11px;font-weight:700;line-height:16px;color:var(--today);background:var(--surface);border:1px solid currentColor;padding:0 5px;border-radius:999px;white-space:nowrap}
+.vline.show{border-left:2px dashed var(--c-deliver)}
+.vline.show span{color:var(--c-deliver);left:auto;right:5px}
+.dim{opacity:.22}
+.scroll-hint{font-size:13px;color:var(--muted);display:none}
+@media (max-width:1000px){.scroll-hint{display:block}}
+@media (max-width:760px){:root{--label-w:136px}.g-label{font-size:12px;padding-left:10px}.g-label .who{font-size:11px}}
+
+/* Sprint ledger */
+.ledger{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.sprint{display:grid;grid-template-columns:210px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.sprint:last-child{border-bottom:0}
+.s-side{padding:20px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.sprint.is-current .s-side{background:var(--ink-soft);box-shadow:inset 3px 0 0 var(--c-product)}
+.s-code{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1;color:var(--fg)}
+.s-dates{font-size:13px;color:var(--muted)}
+.s-main{padding:20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.s-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px}
+.tag.school-tag{background:var(--school);color:var(--school-fg)}
+.tag.goal{border:1px solid var(--line-strong);color:var(--fg)}
+.tag.now{background:var(--c-product);color:var(--bar-fg)}
+.tasks{display:grid;grid-template-columns:120px minmax(0,1fr);gap:7px 14px;margin:0}
+.tasks dt{font-weight:600;font-size:14px}
+.tasks dd{margin:0;font-size:14px}
+.tasks .row-dim{opacity:.25}
+@media (max-width:760px){
+  .sprint{grid-template-columns:1fr}
+  .s-side{border-right:0;border-bottom:1px solid var(--line);flex-direction:row;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .sprint.is-current .s-side{box-shadow:inset 0 3px 0 var(--c-product)}
+  .tasks{grid-template-columns:1fr;gap:2px}
+  .tasks dd{margin-bottom:8px}
+}
+
+/* Team + decisions */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:opacity .2s}
+.person .role{font-size:13px;color:var(--muted)}
+.person ul{margin:0;padding-left:18px;font-size:13.5px;display:flex;flex-direction:column;gap:3px}
+.person li span{color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.box ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.box .deadline{font-size:14px;font-weight:600;color:var(--today)}
+footer{font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Uvision: roadmap to the showroom on 6 April 2027</h1>
+    <p class="lede">Ten sprints to deliver a beta ready for production: a client finds a photographer or videographer, books a slot and pays, without asking for a quote.</p>
+    <div class="facts num">
+      <div>Start <b>23 Nov 2026</b></div>
+      <div>Showroom <b>6 Apr 2027</b></div>
+      <div>Team <b>5 people</b>, about 5 hours a week each</div>
+    </div>
+    <dl class="howto">
+      <div><dt>Sprint</dt><dd>Two weeks of work, Monday to Sunday, numbered S0 to S9.</dd></div>
+      <div><dt>Milestone</dt><dd>A result we can show, for example "a client books and pays".</dd></div>
+      <div><dt>Follow-up meeting</dt><dd>A school checkpoint at the start of a sprint, where the team gives a demo.</dd></div>
+    </dl>
+  </header>
+
+  <section aria-labelledby="now-h">
+    <h2 id="now-h">Where the project stands</h2>
+    <div class="status" id="status"></div>
+  </section>
+
+  <section aria-labelledby="journey-h">
+    <div class="section-head">
+      <h2 id="journey-h">The journey we are building</h2>
+      <p class="lede">This is the founders' priority. Every sprint brings the team closer to this complete journey, testable end to end.</p>
+    </div>
+    <div class="journey">
+      <div class="step"><div class="n">1</div><div class="t">Search</div><div class="m">Category, city, budget, filters</div></div>
+      <div class="step"><div class="n">2</div><div class="t">View the profile</div><div class="m">Portfolio, prices, reviews</div></div>
+      <div class="step"><div class="n">3</div><div class="t">Choose</div><div class="m">A service and a free slot</div></div>
+      <div class="step"><div class="n">4</div><div class="t">Book</div><div class="m">No quote, no waiting</div></div>
+      <div class="step"><div class="n">5</div><div class="t">Pay</div><div class="m">Deposit or full amount, in test mode</div></div>
+      <div class="step"><div class="n">6</div><div class="t">Track</div><div class="m">In their personal space</div></div>
+    </div>
+    <p class="journey-note">The MVP also covers messaging between client and creative, and reviews once a booking is confirmed. It covers all of France and all twelve categories.</p>
+  </section>
+
+  <section aria-labelledby="gantt-h">
+    <div class="section-head">
+      <h2 id="gantt-h">Forecast Gantt chart</h2>
+      <p class="lede">One row per workstream. Hover a bar to read its details. School meetings are on the last row.</p>
+    </div>
+    <div class="filter" role="group" aria-label="Filter by team member">
+      <span>Show the work of:</span>
+      <button class="chip" type="button" id="f-all" data-person="all" aria-pressed="true">Whole team</button>
+      <button class="chip" type="button" id="f-P" data-person="P" aria-pressed="false">Parikshit</button>
+      <button class="chip" type="button" id="f-A" data-person="A" aria-pressed="false">Abdrahmane</button>
+      <button class="chip" type="button" id="f-M" data-person="M" aria-pressed="false">Maya</button>
+      <button class="chip" type="button" id="f-Al" data-person="Al" aria-pressed="false">Alexandre</button>
+      <button class="chip" type="button" id="f-T" data-person="T" aria-pressed="false">Théodore</button>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--c-found)"></i>Foundations</span>
+      <span><i style="background:var(--c-design)"></i>Design</span>
+      <span><i style="background:var(--c-product)"></i>Features (milestones 1 to 5)</span>
+      <span><i style="background:var(--c-quality)"></i>Quality, security, data</span>
+      <span><i style="background:var(--c-deliver)"></i>Delivery</span>
+      <span><i class="dash"></i>Ongoing background work</span>
+    </div>
+    <p class="scroll-hint">Scroll the chart to the right: workstream names stay visible.</p>
+    <div class="gantt-scroll" id="gantt-scroll"><div class="gantt" id="gantt"></div></div>
+  </section>
+
+  <section aria-labelledby="sprints-h">
+    <div class="section-head">
+      <h2 id="sprints-h">Sprint by sprint</h2>
+      <p class="lede">Each follow-up meeting falls at the start of a sprint: the team shows what the previous sprint produced.</p>
+    </div>
+    <div class="ledger" id="ledger"></div>
+  </section>
+
+  <section aria-labelledby="team-h">
+    <div class="section-head">
+      <h2 id="team-h">Who delivers what</h2>
+      <p class="lede">The deliverables the founders asked for, with the sprint each one is due.</p>
+    </div>
+    <div class="team" id="team"></div>
+  </section>
+
+  <section aria-labelledby="rules-h" id="decisions">
+    <h2 id="rules-h">Rules and decisions to make</h2>
+    <div class="two">
+      <div class="box">
+        <h3>To settle with the founders</h3>
+        <p class="deadline">Before S4 starts, on 18 January</p>
+        <ul>
+          <li><b>Quotes.</b> Does the « PROJET » slot, priced on quote, exist despite the "no quotes" promise?</li>
+          <li><b>Booking confirmation.</b> Automatic once paid, or after the creative accepts? This decides when reviews open.</li>
+          <li><b>The 5% commission.</b> Paid by the client, by the creative, or shared?</li>
+          <li><b>Intellectual property.</b> The code belongs to the school; the transfer terms are still to be set.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>How the team keeps to the schedule</h3>
+        <ul>
+          <li>Each owner builds the part of their domain and reviews the others' work in that domain: security, data, payments.</li>
+          <li>If a member falls behind, those who have finished their sprint deliverables help them first.</li>
+          <li>Design runs one sprint ahead of development: a screen's mockups are ready before it is built.</li>
+          <li>Sprint S8 freezes features: fixes only. It is the only slack in the schedule.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>Sources: the founders' kick-off email, the MVP requirements document, the school schedule. Version of 23 November 2026.</footer>
+</div>
+
+<script>
+(function(){
+  var START = new Date(2026,10,23); // 23 Nov 2026 = day 0
+  var TOTAL = 140;                  // through 11 Apr 2027
+  var pct = function(d){ return (d/TOTAL*100)+'%'; };
+  var NAMES = {P:'Parikshit',A:'Abdrahmane',M:'Maya',Al:'Alexandre',T:'Théodore'};
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function dayToDate(d){ var x=new Date(START); x.setDate(x.getDate()+d); return x; }
+  function fmt(d){ var x=dayToDate(d); return x.getDate()+' '+MONTHS[x.getMonth()]; }
+  var now=new Date(); var TODAY=Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate())-START)/86400000);
+
+  var months = [['Nov',0,8],['December',8,39],['January',39,70],['February',70,98],['March',98,129],['Apr',129,140]];
+  var sprintCols = [['S0',0,14],['S1',14,28],['S2',28,42],['S3',42,56],['S4',56,70],['S5',70,84],['S6',84,98],['S7',98,112],['S8',112,126],['S9',126,133],['Show',133,140]];
+
+  var rows = [
+    {label:'Framing and foundations', who:['P','A','M','Al','T'], segs:[[0,14,'found','Framing','PRD, architecture, data model, threat model']]},
+    {label:'Design and mockups', who:['T'], segs:[[0,56,'design','DESIGN.md and mockups','Design direction, then mockups of the first screens'],[56,98,'design light','One sprint ahead','Mockups ready one sprint before they are built']]},
+    {label:'1 · Creative storefront', who:['Al','P','T','A'], segs:[[14,42,'product','Profile, portfolio, prices','Profile, portfolio, services and prices, availability, deposit']]},
+    {label:'2 · Find a creative', who:['Al','P','M'], segs:[[42,70,'product','Search and filters','Search, full profile, advanced filters']]},
+    {label:'3 · Book and pay', who:['T','Al','P','A'], segs:[[56,84,'product','Booking, payment','Booking, Stripe payment in test mode, emails, personal spaces']]},
+    {label:'4 · Messaging', who:['Al','P','A'], segs:[[84,98,'product','Messages','Messaging between client and creative']]},
+    {label:'5 · Reviews', who:['T','M'], segs:[[84,98,'product','Reviews','Reviews from clients whose booking is confirmed']]},
+    {label:'Security and GDPR', who:['A'], segs:[[0,98,'quality light','Every sprint','Risk analysis, permissions, security reviews each sprint'],[98,126,'quality','Tests, report','Security tests, report and fix plan']]},
+    {label:'Data and indicators', who:['M'], segs:[[0,98,'quality light','Dictionary, indicators','Data dictionary, key indicators, usage tracking'],[98,112,'quality','Tests','User tests with clients and creatives']]},
+    {label:'6 · Production-ready beta', who:['P','A','M','Al','T'], segs:[[98,126,'deliver','Hardening','Fixes, final version to approve, feature freeze']]},
+    {label:'Handover and showroom', who:['P','A','M','Al','T'], segs:[[112,133,'deliver light','Handover','Handover documentation for the founders']], diamond:134}
+  ];
+  var school = [
+    {s:'R2',name:'Follow-up meeting 2 and peer assessment 1',a:0,b:6,demo:'the PRD and the roadmap'},
+    {s:'R3',name:'Follow-up meeting 3 and peer assessment 2',a:42,b:48,demo:'a creative publishes a storefront'},
+    {s:'R4',name:'Follow-up meeting 4',a:70,b:76,demo:'filtered search, booking and test payment'},
+    {s:'R5',name:'Follow-up meeting 5, SSK hackathon week',a:84,b:90,demo:'the full six-step journey'},
+    {s:'PA3',name:'Peer assessment 3',a:105,b:111,demo:null},
+    {s:'R6',name:'Follow-up meeting 6',a:112,b:118,demo:'the beta with messaging and reviews'},
+    {s:'Closing',name:'Closing meeting',a:126,b:139,demo:'the showroom on 6 April'}
+  ];
+
+  function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+  function row(labelHtml, cls){ var r=el('div','g-row'+(cls?' '+cls:'')); var l=el('div','g-label',labelHtml); var t=el('div','g-track'); r.appendChild(l); r.appendChild(t); return {row:r,track:t}; }
+  var g=document.getElementById('gantt');
+
+  var mh=row('Month','g-head');
+  months.forEach(function(m){ var c=el('div','cell',m[0]); c.style.left=pct(m[1]); c.style.width=pct(m[2]-m[1]); mh.track.appendChild(c); });
+  g.appendChild(mh.row);
+  var sh=row('Sprint','g-head');
+  sprintCols.forEach(function(s,i){ var c=el('div','cell scell'+(i%2?' alt':''),s[0]); c.style.left=pct(s[1]); c.style.width=pct(s[2]-s[1]); sh.track.appendChild(c); });
+  g.appendChild(sh.row);
+
+  rows.forEach(function(rw){
+    var r=row(rw.label+'<span class="who">'+rw.who.map(function(k){return NAMES[k];}).join(', ')+'</span>');
+    r.row.dataset.who=rw.who.join(' ');
+    rw.segs.forEach(function(s){
+      var b=el('div','bar '+s[2],'<span>'+s[3]+'</span>'); b.style.left=pct(s[0]); b.style.width=pct(s[1]-s[0]);
+      b.title=rw.label+' — '+s[4]+' ('+fmt(s[0])+' – '+fmt(s[1]-1)+')'; r.track.appendChild(b);
+    });
+    if(rw.diamond!=null){ var d=el('div','diamond'); d.style.left=pct(rw.diamond+.5); d.title='Showroom on 6 April 2027'; r.track.appendChild(d); }
+    g.appendChild(r.row);
+  });
+
+  var sc=row('School meetings<span class="who">R: follow-up meeting · PA: peer assessment</span>');
+  school.forEach(function(s){ var c=el('div','school',s.s); c.style.left=pct(s.a); c.style.width=pct(s.b-s.a); c.title=s.name+(s.demo?' — demo: '+s.demo:''); sc.track.appendChild(c); });
+  g.appendChild(sc.row);
+
+  var ov=el('div','overlay');
+  var show=el('div','vline show','<span>Showroom</span>'); show.style.left=pct(134.5); ov.appendChild(show);
+  if(TODAY>=0 && TODAY<TOTAL){ var tl=el('div','vline','<span>Today</span>'); tl.style.left=pct(TODAY+.5); ov.appendChild(tl); }
+  g.appendChild(ov);
+  function placeOverlay(){ ov.style.top=sh.row.offsetTop+'px'; }
+  placeOverlay(); window.addEventListener('resize', placeOverlay);
+  var gs=document.getElementById('gantt-scroll');
+  if(TODAY>14 && TODAY<TOTAL && gs.scrollWidth>gs.clientWidth){
+    var labelW=g.querySelector('.g-label').offsetWidth; var trackW=g.offsetWidth-labelW;
+    gs.scrollLeft=Math.max(0, TODAY/TOTAL*trackW - 80);
+  }
+
+  var ledger=[
+    {code:'S0',a:0,b:14,title:'Framing and foundations',tags:[['school','Follow-up meeting 2 · we present the PRD and the roadmap']],
+     t:{P:'Architecture diagram v1, data model v1, development, test and production environments',A:'Risk analysis v1, threat model v1, permissions matrix (client, creative, admin)',M:'Data dictionary v1, key indicators, recruiting beta testers among the survey respondents',Al:'Project foundation (Next.js, TypeScript, Tailwind), automatic code checks, user sign-in, French and English',T:'Stripe Connect study, financial rules (statuses, deposit, commission, refunds), design direction (DESIGN.md)'}},
+    {code:'S1',a:14,b:28,title:'Creative storefront, part 1',tags:[],
+     t:{Al:'Sign-up and sign-in screens, creative profile and portfolio',P:'Tables for users, profiles and portfolios; image storage',A:'Securing sign-in, account recovery and file uploads',T:'Mockups of sign-up and the storefront; rules for services and prices',M:'French and English copy; demo data (all of France, 12 categories)'}},
+    {code:'S2',a:28,b:42,title:'Creative storefront, part 2',tags:[['goal','Goal: milestone 1, the creative storefront']],
+     t:{T:'Services and prices, deposit settings, Stripe payment account in test mode',Al:'Screens for services, prices and the availability calendar',P:'Availability and slot model',A:'Access checks (a creative can only edit their own data), phone verification',M:'Usage tracking plan feeding the key indicators'}},
+    {code:'S3',a:42,b:56,title:'Find a creative',tags:[['school','Follow-up meeting 3 · demo: a creative publishes a storefront']],
+     t:{Al:'Search page, profile card, full profile',P:'Search by category, budget, type, name, city and postcode; result speed',M:'Result ranking, filter definitions, handling searches with no results, recommendation study v1',T:'Mockups of search and profile; technical description of bookings',A:'Server security review; personal data visible on public profiles'}},
+    {code:'S4',a:56,b:70,title:'Filters, then book and pay',tags:[['goal','Goal: milestone 2, find a creative']],
+     t:{Al:'Advanced filters, including availability',T:'Bookings and statuses, deposit or full payment in test mode, 5% commission, automated tests of the financial rules',P:'Tables for bookings, payments and transaction history',A:'Payment risks, checking Stripe notifications, protecting access keys',M:'Mockup of the key indicators dashboard'}},
+    {code:'S5',a:70,b:84,title:'Book and pay, continued',tags:[['school','Follow-up meeting 4 · demo: filtered search, booking and test payment'],['goal','Goal: milestone 3, book and pay']],
+     t:{T:'Reliable Stripe notifications; cancellations, refunds, declined payments; booking emails',Al:'Booking journey, client and creative personal spaces',P:'Email sending, shared test environment',A:'Authorisation tests: nobody can reach someone else\'s booking',M:'User test protocol, schedule of the S7 sessions'}},
+    {code:'S6',a:84,b:98,title:'Messaging and reviews',tags:[['school','Follow-up meeting 5 · demo: the full six-step journey'],['school','SSK hackathon week'],['goal','Goal: milestones 4 and 5, messaging and reviews']],
+     t:{Al:'Messaging screens',P:'Message storage and delivery',T:'Reviews from clients whose booking is confirmed; message notifications',A:'Anti-abuse rules, detecting contact details shared in messages, GDPR retention periods',M:'Review indicators, check of French and English copy'}},
+    {code:'S7',a:98,b:112,title:'Hardening and user tests',tags:[['school','Peer assessment 3']],
+     t:{A:'Security tests, report v1',M:'User tests with clients, then with survey creatives; findings summary',T:'Design critique and audit on phone, tablet and desktop; fixes; financial flow documentation',Al:'Fixes, checks on phone and desktop, automated journey tests',P:'Production environment, backups, monitoring'}},
+    {code:'S8',a:112,b:126,title:'Final version to approve, feature freeze',tags:[['school','Follow-up meeting 6 · demo: the beta with messaging and reviews'],['goal','Goal: milestone 6, production-ready beta']],
+     t:{A:'Fix plan and incident plan, final security checklist',P:'Final architecture and database documentation, installation instructions',T:'Technical documentation of the server and the financial flows',Al:'Code documentation, list of known issues',M:'Final data dictionary, data and AI roadmap, recommendations'}},
+    {code:'S9',a:126,b:133,title:'Showroom and handover',tags:[['school','Closing meeting (29 Mar – 10 Apr)'],['school','Showroom on 6 April']],
+     t:{P:'Project installation, access to the code and environments for the founders',A:'Final security report and remaining risks',M:'Showroom material and recommendations for what comes next',Al:'Demo script and demo data',T:'Feature status and roadmap for the next steps'}}
+  ];
+  var order=['P','A','M','Al','T'];
+  var L=document.getElementById('ledger');
+  var current=null;
+  ledger.forEach(function(s){
+    var isNow = TODAY>=s.a && TODAY<s.b; if(isNow) current=s;
+    var art=el('article','sprint'+(isNow?' is-current':'')); art.id='sprint-'+s.code;
+    var side=el('div','s-side','<div class="s-code">'+s.code+'</div><div class="s-dates num">'+fmt(s.a)+' – '+fmt(s.b-1)+'</div>');
+    var main=el('div','s-main'); main.appendChild(el('h3',null,s.title));
+    var tags=(isNow?[['now','In progress']]:[]).concat(s.tags);
+    if(tags.length){ var tg=el('div','s-tags'); tags.forEach(function(t){ tg.appendChild(el('span','tag '+(t[0]==='school'?'school-tag':t[0]),t[1])); }); main.appendChild(tg); }
+    var dl=el('dl','tasks');
+    order.forEach(function(k){ if(!s.t[k]) return; var dt=el('dt',null,NAMES[k]); var dd=el('dd',null,s.t[k]); dt.dataset.who=k; dd.dataset.who=k; dl.appendChild(dt); dl.appendChild(dd); });
+    main.appendChild(dl);
+    art.appendChild(side); art.appendChild(main); L.appendChild(art);
+  });
+
+  // Status band
+  var S=document.getElementById('status');
+  function cell(k,v,d,id){ var c=el('div','st'); if(id) c.id=id; c.appendChild(el('div','st-k',k)); c.appendChild(el('div','st-v',v)); if(d) c.appendChild(el('div','st-d',d)); return c; }
+  if(current){
+    var left=current.b-TODAY;
+    S.appendChild(cell('Current sprint', current.code+' · '+current.title, 'Until <b>'+fmt(current.b-1)+'</b>, '+left+' day'+(left>1?'s':'')+' left. <a href="#sprint-'+current.code+'">See the sprint</a>'));
+  } else if(TODAY<0){
+    S.appendChild(cell('Current sprint','Not started yet','Sprint S0 starts on <b>23 Nov 2026</b>.'));
+  } else {
+    S.appendChild(cell('Current sprint','Project finished','The showroom took place on <b>6 April 2027</b>.'));
+  }
+  var next=school.filter(function(s){ return s.b>TODAY; })[0];
+  if(next){
+    var when = next.a<=TODAY ? 'This week' : 'From '+fmt(next.a)+' to '+fmt(next.b-1);
+    S.appendChild(cell('Next school meeting', next.name, when+(next.demo?'. Demo: <b>'+next.demo+'</b>.':'.')));
+  }
+  var dl18=56-TODAY;
+  if(dl18>0){ S.appendChild(cell('Decisions expected from the founders','4 decisions','Before <b>18 January</b>, in '+dl18+' days. <a href="#decisions">See the decisions</a>')); }
+  var mine=cell('', '', ' ', 'st-mine'); mine.hidden=true; S.appendChild(mine);
+
+  var team=[
+    {k:'P',role:'Project lead, cloud architecture, database',d:[['Architecture diagram','S0, final S8'],['Data model','S0, final S8'],['Technical documentation','S8']]},
+    {k:'A',role:'Cybersecurity',d:[['Risk analysis, threat model','S0, revised S4'],['Permissions matrix','S0'],['Security test report','S7'],['Security checklist','S8']]},
+    {k:'M',role:'Data, AI and communication',d:[['Data dictionary','S0, final S8'],['Key indicators','S0, dashboard S4'],['Recommendation proposals','S3'],['Needs study (user tests)','S7'],['Data and AI roadmap','S8']]},
+    {k:'Al',role:'Full-stack, interfaces',d:[['Interfaces connected to the server','S1 to S6'],['Functional tests','S7'],['Code documentation','S8']]},
+    {k:'T',role:'Full-stack fintech, payments and design',d:[['Financial rules','S0'],['DESIGN.md and mockups','S0, then one sprint ahead'],['Server features (bookings, payments)','S2 to S6'],['Test-mode payment','S4 – S5'],['Flow documentation','S8']]}
+  ];
+  var T=document.getElementById('team');
+  team.forEach(function(p){
+    var c=el('div','person'); c.dataset.who=p.k;
+    c.appendChild(el('h3',null,NAMES[p.k])); c.appendChild(el('div','role',p.role));
+    var ul=el('ul'); p.d.forEach(function(x){ ul.appendChild(el('li',null,x[0]+' <span>· '+x[1]+'</span>')); }); c.appendChild(ul);
+    T.appendChild(c);
+  });
+
+  function apply(who){
+    document.querySelectorAll('.chip').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.person===who)); });
+    document.querySelectorAll('.g-row[data-who]').forEach(function(r){ r.classList.toggle('dim', who!=='all' && r.dataset.who.split(' ').indexOf(who)<0); });
+    document.querySelectorAll('.tasks [data-who]').forEach(function(n){ n.classList.toggle('row-dim', who!=='all' && n.dataset.who!==who); });
+    document.querySelectorAll('.person').forEach(function(n){ n.classList.toggle('dim', who!=='all' && n.dataset.who!==who); });
+    var m=document.getElementById('st-mine');
+    if(who!=='all' && current && current.t[who]){
+      m.children[0].textContent='This sprint for '+NAMES[who];
+      m.children[1].textContent=current.code+' · due '+fmt(current.b-1);
+      m.children[2].textContent=current.t[who];
+      m.hidden=false;
+    } else { m.hidden=true; }
+    try{ localStorage.setItem('uv-roadmap-who', who); }catch(e){}
+  }
+  document.querySelectorAll('.chip').forEach(function(b){ b.addEventListener('click', function(){ apply(b.dataset.person); }); });
+  var saved='all'; try{ saved=localStorage.getItem('uv-roadmap-who')||'all'; }catch(e){}
+  if(!NAMES[saved]) saved='all';
+  apply(saved);
+})();
+</script>
+
+</body>
+
+</html>

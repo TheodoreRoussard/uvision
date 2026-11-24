@@ -2,6 +2,8 @@
 
 Source of scope: [`PRD.md`](PRD.md). Roles: founders' kick-off email (section 3), plus design owned by Théodore.
 
+Visual version (status, Gantt chart, per-person filter): [`docs/index.html`](docs/index.html), published at <https://theodoreroussard.github.io/uvision/> once GitHub Pages is enabled. This Markdown file stays the reference: update it first, then the HTML page.
+
 ## Assumptions
 
 - **Sprints of two weeks**, Monday to Sunday. Every follow-up meeting falls in the first week of a sprint, so each meeting gets a demo of the sprint that just ended.
