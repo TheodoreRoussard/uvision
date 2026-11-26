@@ -8,7 +8,7 @@ The PDFs at the root describe the features expected from the app (structure and 
 - `ESILV SUMMARY UVISION.pdf`
 - `Re- Project Kick-off.pdf`
 
-They are the authority on the *what* (features, scope). `PRODUCT.md` is their design-oriented summary: update it if the PDFs change. On the visual side, they give only a non-binding orientation (blue, purple, grey, white); the visual direction will be set in `DESIGN.md`.
+They are the authority on the *what* (features, scope). `PRD.md` turns them into the project scope, business rules and open questions; `PRODUCT.md` keeps only the design-oriented context and points to the PRD. When the PDFs or the founders' answers change, update `PRD.md` first. On the visual side, they give only a non-binding orientation (blue, purple, grey, white); the visual direction will be set in `DESIGN.md`.
 
 ## Frontend design: one role per tool
 

@@ -4,6 +4,7 @@
 People in France who need a photographer or videographer for a specific occasion (event, portrait, corporate shoot) find it slow and uncertain to hire one: they browse social networks or directories, ask for quotes, wait for answers and go back and forth before knowing the price or whether the creative is free. Meanwhile, emerging creatives, many of them students, struggle to be seen and to turn their work into paid bookings. Left unsolved, clients give up or settle for the first available option, and good creatives stay invisible.
 
 ## Evidence
+- **Sources:** the founders' specification (`ESILV PROJET UVISION.pdf`, 19 pages), executive summary (`ESILV SUMMARY UVISION.pdf`) and kick-off email (`Re- Project Kick-off.pdf`), all confidential and kept out of the repository; the creative survey (`ÉTUDE-Créateurs-visuels-️.pdf`); the report of the first founders' meeting (17 Nov. 2026) and their written answers.
 - **Client side:** founders' observation — "reaching a creative remains complex, slow and uncertain". Assumption — needs validation via user testing with clients on the beta.
 - **Creative survey, 50 respondents (Nov. 2026):** 69% cite lack of visibility as their main problem, 57% finding clients; 58% have no client yet; 69% do not find clients easily (36 answers); 66% use no platform, and those who do mostly use Instagram. Sample bias: 72% students, 46% illustration — only part of it is photo/video.
 - **Respondent quote:** "Job search platforms are too poorly suited to artists."
@@ -39,18 +40,18 @@ Project success (6 April 2027) is **the whole specification built, tested and re
 
 ## Scope
 **MVP — by 14 February 2027 (end of S5)** — A version that a client and a creative can use end to end in a test payment environment, across **all of France** and **all twelve categories** (Events, Sport, Corporate / Business, Fashion & Portrait, Real estate, Products / E-commerce, Lifestyle / Social media, Photobooth, Video / film production, Drone, Travel / nature, Technical / specialised):
-- Client side: search by category, location (city or postcode), budget, type of professional and name; **advanced filters** (availability, rating and reviews, **experienced** — at least N bookings completed on Uvision, N to set — equipment, extra services, travel area); profile card and full profile; booking of a service and slot; payment on the platform (deposit or full amount, with balance and due dates shown upfront); email confirmation; booking tracking in a personal space; **reviews**, open to any client whose booking is confirmed.
+- Client side: search by category, location (city or postcode), budget (under €100, €100–200, €200–500, €500 and over, custom amount), type of professional (photographer, videographer, or both) and name; **advanced filters**, shown after the first search (availability, rating and reviews, **experienced** — at least N bookings completed on Uvision, N to set — equipment, extra services, travel area); profile card in the results (cover photo, name and rating, type of service, base price or package, availability, portfolio preview); full profile (portfolio, biography, detailed prices, reviews, Behance or personal site link); booking of a service and slot; payment on the platform (deposit or full amount, with balance and due dates shown upfront); email confirmation; booking tracking in a personal space; **reviews**, open to any client whose booking is confirmed.
 - Creative side: sign-up and sign-in, light verification (phone, identity check through the payment provider in test mode), student status through a partner school email address, profile, portfolio, link or preview of a Behance page or personal site (there is no Behance API), services with fixed prices, availability calendar, configurable deposit (on/off, fixed or percentage, per service, refund conditions), booking tracking in a personal space.
 - Both: **in-platform messaging** between client and creative — "primordial" for the founders.
 - Interface in French and English.
-- Payment through Stripe, connected to Uvision (Stripe Connect; confirmed by the founders).
+- Payment through Stripe, connected to Uvision (Stripe Connect; confirmed by the founders): the client pays on the platform, never directly to the creative.
 - Commission, fixed and deducted from the creative's payout: **5%** for professionals, **2%** for students of partner schools. Experience shows in the creative's base price, not in the rate.
 
 **Showroom release — by 6 April 2027 (feature freeze 28 March)** — the rest of the specification, built on top of the MVP:
 - Trust and session: validation code given at the end of the session that releases the payment; SMS confirmation; full creative verification (identity document, SIRET number, optional for students, IBAN, two-factor authentication); interactive map of results and geolocation.
-- Community: Graine de Champion (points per shoot, 50 levels, five groups, national and international rankings, badges, yearly rewards); Uvision Award (photo and video competition, voting by registered users).
+- Community: Graine de Champion (points per shoot, 50 levels in five groups — Apprentis, Confirmés, Experts, Élite, Champions (apprentices, confirmed, experts, elite, champions) — national and international rankings, badges, yearly rewards); Uvision Award (photo and video competition twice a year, open to creatives only, voting by registered users).
 - Other segments: Company and School accounts, calls for tenders, casting.
-- **Announcements**, the second way to book, kept by the founders next to direct choice: the client publishes a need as an announcement, the matching creatives see it in their feed and apply, and the client picks one.
+- **Announcements**, the second way to book, kept by the founders next to direct choice: the client publishes a need (category, date, place, budget) as an announcement, the matching creatives see it in their feed and apply, and the client picks one.
 - Growth: promo codes; AI recommendations; extension to other visual professions (graphic designers, video editors, motion designers, illustrators, retouchers, content creators).
 - Secondary features: favourites, FAQ, blog, partners page, « le saviez-vous », yearly recap, comparison of creatives, temporary account deactivation.
 
@@ -84,7 +85,7 @@ Project success (6 April 2027) is **the whole specification built, tested and re
 - [ ] **Success targets:** conversion and "regular clients" thresholds after launch.
 - [x] **Commission:** fixed, deducted from the creative's payout — 5% for professionals, 2% for students of partner schools (founders, Nov. 2026).
 - [ ] **Partner schools:** which schools, and which email domains prove a student's status?
-- [ ] **Freemium:** what the free and paid creative offers contain, next to the commission.
+- [ ] **Freemium:** what the free and paid creative offers contain, next to the commission. The yearly fees in the specification (€24 for students, €48 for professionals) are not carried over as they stand.
 - [ ] **"Experienced" filter:** the team proposes at least N bookings completed on Uvision; which N? The filter is empty at launch, when nobody has bookings yet.
 - [ ] **Announcements:** do creatives apply with their listed services and prices, or with a custom price? A custom price comes close to the quote the product promises to remove.
 - [ ] **Beta testers:** how many clients and survey creatives will test the beta, and do the photo/video respondents suffice (most respondents are illustrators)?
@@ -104,8 +105,8 @@ Project success (6 April 2027) is **the whole specification built, tested and re
 | Survey sample does not represent creatives in the target (72% students, 46% illustrators) | High | Medium | Recruit photo/video creatives specifically for beta tests |
 | Payment and identity data breach (GDPR) | Low | High | Delegate identity and card data to the payment provider; threat model and security tests before production |
 | AI replacing some categories (products, real estate) | Medium | Low (MVP) | Watch category demand after launch |
-| Scope: the whole specification in about 810 h (six people until January, then five); the post-MVP modules get three sprints and no buffer | High | High | Build in priority order (trust and session, community, businesses, ads, AI, extras); feature freeze on 28 March; anything unfinished is delivered specified and documented |
+| Scope: the whole specification in about 810 h (six people until January, then five); the post-MVP modules get three sprints and no buffer | High | High | Build in priority order (trust and session, community, businesses, announcements, AI, extras); feature freeze on 28 March; anything unfinished is delivered specified and documented |
 | No one maintains the platform after the showroom | High | Medium | Handover pack, go-live procedure and known-issues list written for whoever the founders hire |
 
 ---
-*Status: DRAFT — requirements only. Implementation planning pending via /plan. Created 2026-11-23, revised 2026-11-23 (client focus, France-wide, all categories, reviews after confirmation), revised 2026-11-26 (MVP by 14 February; whole specification by the showroom; 8 h per person per week; founders go live), revised 2026-11-26 (founders' answers to the first meeting: commission 5% / 2%, Stripe, announcements kept, Ads set aside, experienced filter, Behance link).*
+*Status: DRAFT — requirements only. Implementation planning pending via /plan. Created 2026-11-23, revised 2026-11-23 (client focus, France-wide, all categories, reviews after confirmation), revised 2026-11-26 (MVP by 14 February; whole specification by the showroom; 8 h per person per week; founders go live), revised 2026-11-26 (founders' answers to the first meeting: commission 5% / 2%, Stripe, announcements kept, Ads set aside, experienced filter, Behance link), revised 2026-11-27 (single source for scope, business rules and open questions; PRODUCT.md now points here).*

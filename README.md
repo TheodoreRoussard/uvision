@@ -68,7 +68,7 @@ The project is just starting: this repository contains no code yet. Installation
 
 ## Repository documentation
 
-- [`PRODUCT.md`](PRODUCT.md): product context (users, scope, constraints, open decisions).
+- [`PRODUCT.md`](PRODUCT.md): design context (users in use, positioning, brand, principles); scope and open questions are in the PRD.
 - [`CLAUDE.md`](CLAUDE.md): working rules for designing and verifying the interface.
 
 ## Team
