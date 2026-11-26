@@ -168,7 +168,7 @@ footer{font-size:13px;color:var(--muted)}
       <div>Start <b>23 Nov 2026</b></div>
       <div>Showroom <b>6 Apr 2027</b></div>
       <div>MVP <b>14 Feb 2027</b></div>
-      <div>Team <b>5 people</b>, about 8 hours a week each</div>
+      <div>Team <b>6 people</b> until January, then 5, about 8 hours a week each</div>
     </div>
     <dl class="howto">
       <div><dt>Sprint</dt><dd>Two weeks of work, Monday to Sunday, numbered S0 to S9.</dd></div>
@@ -208,6 +208,7 @@ footer{font-size:13px;color:var(--muted)}
       <button class="chip" type="button" id="f-all" data-person="all" aria-pressed="true">Whole team</button>
       <button class="chip" type="button" id="f-P" data-person="P" aria-pressed="false">Parikshit</button>
       <button class="chip" type="button" id="f-A" data-person="A" aria-pressed="false">Abdrahmane</button>
+      <button class="chip" type="button" id="f-L" data-person="L" aria-pressed="false">Ludwig</button>
       <button class="chip" type="button" id="f-M" data-person="M" aria-pressed="false">Maya</button>
       <button class="chip" type="button" id="f-Al" data-person="Al" aria-pressed="false">Alexandre</button>
       <button class="chip" type="button" id="f-T" data-person="T" aria-pressed="false">Théodore</button>
@@ -282,7 +283,7 @@ footer{font-size:13px;color:var(--muted)}
   var START = new Date(2026,10,23); // 23 Nov 2026 = day 0
   var TOTAL = 140;                  // through 11 Apr 2027
   var pct = function(d){ return (d/TOTAL*100)+'%'; };
-  var NAMES = {P:'Parikshit',A:'Abdrahmane',M:'Maya',Al:'Alexandre',T:'Théodore'};
+  var NAMES = {P:'Parikshit',A:'Abdrahmane',L:'Ludwig',M:'Maya',Al:'Alexandre',T:'Théodore'};
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   function dayToDate(d){ var x=new Date(START); x.setDate(x.getDate()+d); return x; }
   function fmt(d){ var x=dayToDate(d); return x.getDate()+' '+MONTHS[x.getMonth()]; }
@@ -292,10 +293,10 @@ footer{font-size:13px;color:var(--muted)}
   var sprintCols = [['S0',0,14],['S1',14,28],['S2',28,42],['S3',42,56],['S4',56,70],['S5',70,84],['S6',84,98],['S7',98,112],['S8',112,126],['S9',126,133],['Show',133,140]];
 
   var rows = [
-    {label:'Framing and foundations', who:['P','A','M','Al','T'], segs:[[0,14,'found','Framing','PRD, architecture, data model, threat model']]},
+    {label:'Framing and foundations', who:['P','A','L','M','Al','T'], segs:[[0,14,'found','Framing','PRD, architecture, data model, threat model']]},
     {label:'Design and mockups', who:['T'], segs:[[0,42,'design','DESIGN.md and mockups','Design direction, then mockups of the MVP screens'],[42,112,'design light','One sprint ahead','Mockups ready one sprint before they are built']]},
-    {label:'1 · Creative storefront', who:['Al','P','T','A'], segs:[[14,28,'product','Storefront','Profile, portfolio, services and prices, availability, deposit']]},
-    {label:'2 · Find a creative', who:['Al','P','M'], segs:[[28,42,'product','Search','Search, full profile, advanced filters']]},
+    {label:'1 · Creative storefront', who:['Al','P','T','A','L'], segs:[[14,28,'product','Storefront','Profile, portfolio, services and prices, availability, deposit']]},
+    {label:'2 · Find a creative', who:['Al','P','M','A','L'], segs:[[28,42,'product','Search','Search, full profile, advanced filters']]},
     {label:'3 · Book and pay', who:['T','Al','P','A'], segs:[[42,56,'product','Book, pay','Booking, Stripe payment in test mode, emails, personal spaces']]},
     {label:'4–5 · Messaging, reviews', who:['Al','P','T','A'], segs:[[56,70,'product','Messages','Messaging between client and creative; reviews once a booking is confirmed']]},
     {label:'6 · MVP complete', who:['P','A','M','Al','T'], segs:[[70,84,'product','Tests, fixes','End-to-end tests, user tests, design audit and MVP fixes']]},
@@ -303,6 +304,7 @@ footer{font-size:13px;color:var(--muted)}
     {label:'8 · Community, businesses', who:['T','Al','P','A','M'], segs:[[98,112,'product','Community','Graine de Champion, Uvision Award, company and school accounts, calls for tenders']]},
     {label:'9 · Announcements, AI, extras', who:['T','Al','P','M','A'], segs:[[112,126,'product','Posts, AI','Announcements, AI recommendations, other visual professions, secondary features']]},
     {label:'Security and GDPR', who:['A'], segs:[[0,70,'quality light','Every sprint','Risk analysis, permissions, security reviews each sprint'],[70,84,'quality','MVP tests','MVP security tests and report v1'],[84,112,'quality light','New modules','Verification, two-factor authentication, vote fraud, permissions'],[112,133,'quality','Final tests','Final security tests, checklist and report']]},
+    {label:'Security, until January', who:['L'], segs:[[0,42,'quality','With Abdrahmane','Same security tasks as Abdrahmane, then handover to him before leaving in January']]},
     {label:'Data and indicators', who:['M'], segs:[[0,70,'quality light','Dictionary, indicators','Data dictionary, key indicators, rules of the post-MVP modules'],[70,84,'quality','User tests','User tests with clients and creatives'],[84,126,'quality light','Dashboard, AI','Indicators dashboard, AI recommendations, data and AI roadmap']]},
     {label:'10 · Handover and showroom', who:['P','A','M','Al','T'], segs:[[126,133,'deliver','','Fixes, handover pack and go-live procedure for the founders']], diamond:134}
   ];
@@ -356,11 +358,11 @@ footer{font-size:13px;color:var(--muted)}
 
   var ledger=[
     {code:'S0',a:0,b:14,title:'Framing and foundations',tags:[['school','Follow-up meeting 2 · we present the PRD and the roadmap']],
-     t:{P:'Architecture diagram v1, data model v1 ready to take the later modules, development, test and production environments',A:'Risk analysis v1, threat model v1, permissions matrix (client, creative, admin, then company and school)',M:'Data dictionary v1, key indicators, recruiting beta testers among the survey respondents',Al:'Project foundation (Next.js, TypeScript, Tailwind), automatic code checks, user sign-in, French and English',T:'Progress tracking on GitHub for the founders (milestones, one issue per deliverable), Stripe Connect study, financial rules (statuses, deposit, 5% or 2% commission deducted from the payout, refunds, validation code), design direction (DESIGN.md)'}},
+     t:{P:'Architecture diagram v1, data model v1 ready to take the later modules, development, test and production environments',A:'Risk analysis v1, threat model v1, permissions matrix (client, creative, admin, then company and school)',L:'With Abdrahmane: risk analysis v1, threat model v1, permissions matrix',M:'Data dictionary v1, key indicators, recruiting beta testers among the survey respondents',Al:'Project foundation (Next.js, TypeScript, Tailwind), automatic code checks, user sign-in, French and English',T:'Progress tracking on GitHub for the founders (milestones, one issue per deliverable), Stripe Connect study, financial rules (statuses, deposit, 5% or 2% commission deducted from the payout, refunds, validation code), design direction (DESIGN.md)'}},
     {code:'S1',a:14,b:28,title:'Creative storefront',tags:[['goal','Goal: milestone 1, the creative storefront']],
-     t:{Al:'Sign-up and sign-in, creative profile, portfolio, Behance or website link, services and prices, availability calendar',P:'Tables for users, profiles, portfolios, services and availability; image storage',A:'Securing sign-in, account recovery and uploads; a creative can only edit their own data; phone verification; student status through a partner school email',T:'Mockups of sign-up, the storefront and search; services and prices; deposit settings; Stripe account in test mode',M:'French and English copy; demo data (all of France, 12 categories); usage tracking plan'}},
+     t:{Al:'Sign-up and sign-in, creative profile, portfolio, Behance or website link, services and prices, availability calendar',P:'Tables for users, profiles, portfolios, services and availability; image storage',A:'Securing sign-in, account recovery and uploads; a creative can only edit their own data; phone verification; student status through a partner school email',L:'With Abdrahmane: securing sign-in and uploads, access checks, phone and school email verification',T:'Mockups of sign-up, the storefront and search; services and prices; deposit settings; Stripe account in test mode',M:'French and English copy; demo data (all of France, 12 categories); usage tracking plan'}},
     {code:'S2',a:28,b:42,title:'Find a creative',tags:[['goal','Goal: milestone 2, find a creative']],
-     t:{Al:'Search page, profile card, full profile, advanced filters including « experienced »',P:'Search by category, budget, type, name, city and postcode, with filters; result speed',M:'Result ranking, filter definitions including the « experienced » threshold, handling searches with no results, recommendation study v1',T:'Mockups of booking, personal spaces and messaging; technical description of bookings',A:'Server security review; personal data visible on public profiles'}},
+     t:{Al:'Search page, profile card, full profile, advanced filters including « experienced »',P:'Search by category, budget, type, name, city and postcode, with filters; result speed',M:'Result ranking, filter definitions including the « experienced » threshold, handling searches with no results, recommendation study v1',T:'Mockups of booking, personal spaces and messaging; technical description of bookings',A:'Server security review; personal data visible on public profiles',L:'With Abdrahmane: server security review, public profile data; handover of his work before leaving in January'}},
     {code:'S3',a:42,b:56,title:'Book and pay',tags:[['school','Follow-up meeting 3 · demo: a creative publishes a storefront, search with filters'],['goal','Goal: milestone 3, book and pay']],
      t:{T:'Bookings and statuses, deposit or full payment in test mode, 5% or 2% commission, reliable Stripe notifications, cancellations and refunds',Al:'Booking journey, client and creative personal spaces',P:'Tables for bookings, payments and transactions; email sending',A:'Payment risks, checking Stripe notifications, protecting access keys; nobody can reach someone else\'s booking',M:'Mockup of the key indicators dashboard; user test protocol'}},
     {code:'S4',a:56,b:70,title:'Messaging and reviews',tags:[['goal','Goal: milestones 4 and 5, messaging and reviews']],
@@ -376,7 +378,7 @@ footer{font-size:13px;color:var(--muted)}
     {code:'S9',a:126,b:133,title:'Stabilisation and handover',tags:[['school','Closing meeting (29 Mar – 10 Apr)'],['school','Showroom on 6 April'],['goal','Goal: milestone 10, ready for the founders to launch']],
      t:{P:'Installation instructions, go-live procedure (live payment keys, domain, environments), access for the founders',A:'Final security report and remaining risks',M:'Showroom material, recommendations for the founders',Al:'Demo script and data, code documentation, known issues',T:'Feature status against the specification, server and financial flow documentation'}}
   ];
-  var order=['P','A','M','Al','T'];
+  var order=['P','A','L','M','Al','T'];
   var L=document.getElementById('ledger');
   var current=null;
   ledger.forEach(function(s){
@@ -415,6 +417,7 @@ footer{font-size:13px;color:var(--muted)}
   var team=[
     {k:'P',role:'Project lead, cloud architecture, database',d:[['Architecture diagram','S0, final S8'],['Data model','S0, v2 S5, final S8'],['Technical documentation, go-live procedure','S8 – S9']]},
     {k:'A',role:'Cybersecurity',d:[['Risk analysis, threat model','S0, revised S3 and S5'],['Permissions matrix','S0, extended S7'],['Security test report','v1 S5, final S9'],['Security checklist','S8']]},
+    {k:'L',role:'Cybersecurity, with Abdrahmane, until January',d:[['Risk analysis, threat model, permissions matrix','S0'],['Sign-in, upload and API security','S1 – S2'],['Handover to Abdrahmane','Before leaving in January']]},
     {k:'M',role:'Data, AI and communication',d:[['Data dictionary','S0, final S8'],['Key indicators','S0, dashboard S7'],['Recommendation proposals','S2, AI in S8'],['Needs study (user tests)','S5'],['Data and AI roadmap','S8']]},
     {k:'Al',role:'Full-stack, interfaces',d:[['Interfaces connected to the server','S1 to S8'],['Functional tests','S5, then each sprint'],['Code documentation','S9']]},
     {k:'T',role:'Full-stack fintech, payments and design',d:[['Progress tracking on GitHub','S0, then each sprint'],['Financial rules','S0'],['DESIGN.md and mockups','S0, then one sprint ahead'],['Server features','S1 to S8'],['Test-mode payment','S3 – S5'],['Flow documentation','S9']]}

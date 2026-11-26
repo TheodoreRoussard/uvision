@@ -1,6 +1,6 @@
 # Uvision — Roadmap to the Showroom (6 April 2027)
 
-Source of scope: [`PRD.md`](PRD.md). Roles: founders' kick-off email (section 3), plus design owned by Théodore.
+Source of scope: [`PRD.md`](PRD.md). Roles: founders' kick-off email (section 3), plus design owned by Théodore. The team has six members until January: Ludwig works with Abdrahmane on security and leaves in January.
 
 Visual version (status, Gantt chart, per-person filter): [`docs/index.html`](docs/index.html), published at <https://theodoreroussard.github.io/uvision/> once GitHub Pages is enabled. This Markdown file stays the reference: update it first, then the HTML page.
 
@@ -9,7 +9,8 @@ Visual version (status, Gantt chart, per-person filter): [`docs/index.html`](doc
 - **The whole specification is built by the showroom.** The team stops working on the project on 6 April 2027. Nothing is planned after that date: the founders launch the platform themselves from the handover pack.
 - **The MVP comes first, by 14 February** (end of S5): the six-step journey, messaging and reviews. Sprints S6 to S8 build everything else in the specification.
 - **Sprints of two weeks**, Monday to Sunday. Every follow-up meeting falls in the first week of a sprint, so each meeting gets a demo of the sprint that just ended.
-- **Capacity: 8 h per person per week**, 5 people, no lighter weeks, i.e. **40 h per week for the team, about 80 h per sprint, about 760 h in total**.
+- **Capacity: 8 h per person per week**, no lighter weeks. **Six people until Ludwig leaves** (assumed at the end of S2, 3 January), i.e. 48 h per week; **five people afterwards**, i.e. 40 h per week and about 80 h per sprint. **About 810 h in total.**
+- **Ludwig shares Abdrahmane's security tasks** in S0 to S2, then hands his work over to him before leaving. If he stays later in January, he continues with Abdrahmane in S3.
 - **Deliverables are met on time.** If someone falls behind, the members who have completed their part of the sprint help them before taking on new work.
 - **Each role owner builds the slice of their domain** and reviews the others' work in that domain (security, data, payments).
 - **The client experience leads.** The creative storefront comes first only because the client journey needs creatives to find; every screen is judged by what it brings to the client.
@@ -40,6 +41,7 @@ Nothing user-visible yet. Every later sprint depends on these decisions.
 |---|---|
 | Parikshit | Architecture diagram v1; data model v1 for the MVP (users, profiles, services, availability, bookings, payments, reviews, portfolios, messages), designed to take the post-MVP modules; dev, preview and production environments |
 | Abdrahmane | Risk analysis v1; threat model v1; permissions matrix (client, creative, admin, then company and school) |
+| Ludwig | With Abdrahmane: risk analysis v1; threat model v1; permissions matrix |
 | Maya | Data dictionary v1, aligned with the data model; key indicators (bookings, conversion, cancellations, retention); recruit photo and video beta testers from the survey |
 | Alexandre | Repository scaffold (Next.js, TypeScript, Tailwind), CI, Better Auth wired in, i18n setup (French and English) |
 | Théodore | Progress tracking on GitHub for the founders (repository created; milestones M1 – M10, one issue per deliverable, kept up to date each sprint); Stripe Connect study and decision note; financial specification (booking statuses, deposit rules, commission of 5% or 2% for partner-school students deducted from the payout, refunds, payouts, validation code); design direction centred on the client journey: `impeccable init`, then `DESIGN.md` with AlignUI |
@@ -52,6 +54,7 @@ Nothing user-visible yet. Every later sprint depends on these decisions.
 | Alexandre | Sign-up and sign-in screens; creative profile, portfolio, services and prices screens; link and preview of a Behance page or website; availability calendar |
 | Parikshit | Schema and migrations for users, profiles, portfolios, services and availability; image storage |
 | Abdrahmane | Authentication hardening (password policy, sessions, account recovery); upload security; ownership checks; phone verification flow; student status through a partner school email address |
+| Ludwig | With Abdrahmane: authentication hardening; upload security; ownership checks; phone and school email verification |
 | Théodore | Design of the onboarding, storefront and search screens (`impeccable shape`); services and prices API; deposit settings; creative payment account in Stripe test mode |
 | Maya | French and English copy for these screens; seed data (fictional creatives across France, all twelve categories); tracking plan |
 
@@ -65,6 +68,7 @@ Nothing user-visible yet. Every later sprint depends on these decisions.
 | Maya | Ranking criteria; definition of the advanced filters, including the « experienced » threshold (completed bookings); handling of empty results (nearby areas, related categories); recommendation study v1 |
 | Théodore | Design of the booking, personal space and messaging screens; booking API contract |
 | Abdrahmane | API security review (injections, rate limiting); what personal data a public profile exposes |
+| Ludwig | With Abdrahmane: API security review; public profile data exposure; handover of his security work to Abdrahmane before leaving in January |
 
 **Milestone M2 done:** a client finds a creative with filters. Demo at follow-up meeting 3, with M1.
 
@@ -158,6 +162,7 @@ The handover pack from section 6 of the kick-off email, split by owner. Nobody w
 | Parikshit | Technical documentation and go-live procedure | S8 – S9 |
 | Abdrahmane | Risk analysis and threat model | v1 S0, updated S3 (payments) and S5 (verification) |
 | Abdrahmane | Permissions matrix | S0, extended S7 |
+| Ludwig | With Abdrahmane: risk analysis, threat model, permissions matrix, security reviews | S0 – S2, then handover |
 | Abdrahmane | Security checklist | S8 |
 | Abdrahmane | Test report | v1 S5, final S9 |
 | Maya | Data dictionary | v1 S0, final S8 |
@@ -177,7 +182,8 @@ The handover pack from section 6 of the kick-off email, split by owner. Nobody w
 
 ## Risks to the plan
 
-- **The whole specification in about 760 h.** The post-MVP modules get three sprints and no buffer. They are built in priority order; anything unfinished at the feature freeze is delivered specified and documented, and listed in the feature status.
+- **Ludwig leaves in January.** Security loses half its capacity from S3, exactly when payments start. His handover to Abdrahmane is a deliverable of S2, and the S0 – S2 security work is front-loaded so that Abdrahmane carries on alone.
+- **The whole specification in about 810 h.** The post-MVP modules get three sprints and no buffer. They are built in priority order; anything unfinished at the feature freeze is delivered specified and documented, and listed in the feature status.
 - **No buffer before the showroom.** The S8 freeze is followed by a one-week S9 for fixes and handover only. Mutual help comes first when a member is late.
 - **Nobody maintains the platform after 6 April.** The founders launch it from the handover pack, so documentation is a deliverable, not an afterthought.
 - **Théodore holds both design and payments.** Design is front-loaded (S0 – S2) and stays one sprint ahead of development; payment work sits in S3 – S6.

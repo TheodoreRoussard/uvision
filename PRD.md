@@ -104,7 +104,7 @@ Project success (6 April 2027) is **the whole specification built, tested and re
 | Survey sample does not represent creatives in the target (72% students, 46% illustrators) | High | Medium | Recruit photo/video creatives specifically for beta tests |
 | Payment and identity data breach (GDPR) | Low | High | Delegate identity and card data to the payment provider; threat model and security tests before production |
 | AI replacing some categories (products, real estate) | Medium | Low (MVP) | Watch category demand after launch |
-| Scope: the whole specification in about 760 h; the post-MVP modules get three sprints and no buffer | High | High | Build in priority order (trust and session, community, businesses, ads, AI, extras); feature freeze on 28 March; anything unfinished is delivered specified and documented |
+| Scope: the whole specification in about 810 h (six people until January, then five); the post-MVP modules get three sprints and no buffer | High | High | Build in priority order (trust and session, community, businesses, ads, AI, extras); feature freeze on 28 March; anything unfinished is delivered specified and documented |
 | No one maintains the platform after the showroom | High | Medium | Handover pack, go-live procedure and known-issues list written for whoever the founders hire |
 
 ---
