@@ -18,7 +18,7 @@ The goal is one complete journey that can be tested end to end:
 5. They pay in a test environment.
 6. They find their booking in their personal space.
 
-(2) Posts
+(2) Announcements (after the MVP, sprint S8; kept by the founders next to direct choice)
 1. The client post their needs and conditions
 2. The post appear on the professionals feed (based on the filters and the photography categories, e.g availability)
 3. The professional choose which post they want to attend
@@ -26,30 +26,31 @@ The goal is one complete journey that can be tested end to end:
 5. They find their booking in their personal space.
 Features covered:
 
-- **Search** by category (wedding, events, corporate, real estate, drone…), by city, postcode or geolocation, by budget and by type of professional.
-- **Advanced filters:** availability, rating and number of reviews, equipment, extra services, travel area.
-- **Professional profiles:** portfolio, biography, services and prices, client reviews.
-- **Online booking** with an availability calendar and confirmation by email and SMS.
-- **Payment on the platform**, with an optional deposit set by the professional.
+- **Search** by category (wedding, events, corporate, real estate, drone…), by city or postcode (map and geolocation after the MVP), by budget and by type of professional.
+- **Advanced filters:** availability, rating and number of reviews, experienced (completed bookings on Uvision), equipment, extra services, travel area.
+- **Professional profiles:** portfolio, biography, services and prices, client reviews, link or preview of a Behance page or website.
+- **Online booking** with an availability calendar and confirmation by email (SMS after the MVP).
+- **Messaging** between client and professional (primordial for the founders).
+- **Payment on the platform** through Stripe, with an optional deposit set by the professional.
 - **Personal spaces** for the client and for the professional.
 
-### Planned later
+### After the MVP, by the showroom (6 April 2027)
 
 - Session validation code, which releases the professional's payment.
-- Messaging between client and professional (priomordial)
+- SMS confirmation, full verification, map and geolocation.
+- Announcements: the client posts a need, professionals apply.
 - Graine de Champion: points, levels, rankings and badges for professionals.
 - Uvision Award: photo and video competition.
-- Uvision Ads: advertising slots for brands.
 - Company and School accounts, calls for tenders.
 - Extension to other visual professions (graphic designers, video editors, motion designers…).
 
 ### Business model
 
-Working assumption, to be confirmed with the founders: a freemium offer for professionals and a commission on bookings.
+Confirmed by the founders: a fixed commission on bookings, deducted from the professional's payout, next to a freemium offer whose content is still to define. Uvision Ads is set aside for a future version.
 
 **Commissions :** 
 - 5% for professionals
-- 2% for students from associated schools
+- 2% for students from partner schools (proved by a school email address)
 
 ## Tech stack
 

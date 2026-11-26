@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Uvision MVP roadmap to the 6 April 2027 showroom: project status, forecast Gantt chart, sprints S0 to S9 and deliverables per team member.">
+<meta name="description" content="Uvision roadmap to the 6 April 2027 showroom: MVP by 14 February, then the whole specification; forecast Gantt chart, sprints S0 to S9 and deliverables per team member.">
 <title>Uvision Roadmap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,11 +163,12 @@ footer{font-size:13px;color:var(--muted)}
 <div class="wrap">
   <header>
     <h1>Uvision: roadmap to the showroom on 6 April 2027</h1>
-    <p class="lede">Ten sprints to deliver a beta ready for production: a client finds a photographer or videographer, books a slot and pays, without asking for a quote.</p>
+    <p class="lede">Ten sprints: the MVP by 14 February, then the whole specification by the showroom, ready for the founders to launch. The team stops working on the project after 6 April.</p>
     <div class="facts num">
       <div>Start <b>23 Nov 2026</b></div>
       <div>Showroom <b>6 Apr 2027</b></div>
-      <div>Team <b>5 people</b>, about 5 hours a week each</div>
+      <div>MVP <b>14 Feb 2027</b></div>
+      <div>Team <b>5 people</b>, about 8 hours a week each</div>
     </div>
     <dl class="howto">
       <div><dt>Sprint</dt><dd>Two weeks of work, Monday to Sunday, numbered S0 to S9.</dd></div>
@@ -194,7 +195,7 @@ footer{font-size:13px;color:var(--muted)}
       <div class="step"><div class="n">5</div><div class="t">Pay</div><div class="m">Deposit or full amount, in test mode</div></div>
       <div class="step"><div class="n">6</div><div class="t">Track</div><div class="m">In their personal space</div></div>
     </div>
-    <p class="journey-note">The MVP also covers messaging between client and creative, and reviews once a booking is confirmed. It covers all of France and all twelve categories.</p>
+    <p class="journey-note">The MVP, due on 14 February, also covers messaging between client and creative, and reviews once a booking is confirmed, across all of France and all twelve categories. Sprints S6 to S8 then build the rest of the specification: validation code, SMS, full verification, map, Graine de Champion, Uvision Award, company and school accounts, announcements (the client posts a need, creatives apply), AI recommendations and secondary features. Uvision Ads is set aside by the founders for a future version.</p>
   </section>
 
   <section aria-labelledby="gantt-h">
@@ -214,7 +215,7 @@ footer{font-size:13px;color:var(--muted)}
     <div class="legend">
       <span><i style="background:var(--c-found)"></i>Foundations</span>
       <span><i style="background:var(--c-design)"></i>Design</span>
-      <span><i style="background:var(--c-product)"></i>Features (milestones 1 to 5)</span>
+      <span><i style="background:var(--c-product)"></i>Features (milestones 1 to 9)</span>
       <span><i style="background:var(--c-quality)"></i>Quality, security, data</span>
       <span><i style="background:var(--c-deliver)"></i>Delivery</span>
       <span><i class="dash"></i>Ongoing background work</span>
@@ -244,12 +245,19 @@ footer{font-size:13px;color:var(--muted)}
     <div class="two">
       <div class="box">
         <h3>To settle with the founders</h3>
-        <p class="deadline">Before S4 starts, on 18 January</p>
+        <p class="deadline">Before S3 starts, on 4 January</p>
         <ul>
           <li><b>Quotes.</b> Does the « PROJET » slot, priced on quote, exist despite the "no quotes" promise?</li>
           <li><b>Booking confirmation.</b> Automatic once paid, or after the creative accepts? This decides when reviews open.</li>
-          <li><b>The 5% commission.</b> Paid by the client, by the creative, or shared?</li>
+          <li><b>Partner schools.</b> Which schools, and which email domains prove a student's status (2% commission)?</li>
+          <li><b>« Experienced » filter</b>, by 21 December. How many bookings completed on Uvision? The filter is empty at launch.</li>
           <li><b>Intellectual property.</b> The code belongs to the school; the transfer terms are still to be set.</li>
+        </ul>
+        <p class="deadline">Later, before the module that depends on it</p>
+        <ul>
+          <li><b>Payment release</b>, before S6 (15 February). Is the payment released when the validation code is entered, or when the photos are delivered?</li>
+          <li><b>Graine de Champion rules</b>, before S7 (1 March). The role of speed in the score, the rewards, and how levels never reset while the score can go down.</li>
+          <li><b>Announcements</b>, before S8 (15 March). Do creatives apply at their listed prices, or with a custom price close to a quote?</li>
         </ul>
       </div>
       <div class="box">
@@ -258,13 +266,15 @@ footer{font-size:13px;color:var(--muted)}
           <li>Each owner builds the part of their domain and reviews the others' work in that domain: security, data, payments.</li>
           <li>If a member falls behind, those who have finished their sprint deliverables help them first.</li>
           <li>Design runs one sprint ahead of development: a screen's mockups are ready before it is built.</li>
-          <li>Sprint S8 freezes features: fixes only. It is the only slack in the schedule.</li>
+          <li>After the MVP, modules are built in priority order: trust and session, community, companies and schools, then announcements, AI and secondary features.</li>
+          <li>Features freeze on 28 March, at the end of S8. S9 is for fixes and handover only: there is no other slack. Anything unfinished at the freeze is delivered specified and documented.</li>
+          <li>Nobody works on the project after 6 April: the founders launch it from the handover pack and its go-live procedure.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <footer>Sources: the founders' kick-off email, the MVP requirements document, the school schedule. Version of 23 November 2026.</footer>
+  <footer>Sources: the founders' kick-off email, the first meeting report and the founders' answers, the requirements document, the school schedule. Version of 26 November 2026.</footer>
 </div>
 
 <script>
@@ -283,25 +293,27 @@ footer{font-size:13px;color:var(--muted)}
 
   var rows = [
     {label:'Framing and foundations', who:['P','A','M','Al','T'], segs:[[0,14,'found','Framing','PRD, architecture, data model, threat model']]},
-    {label:'Design and mockups', who:['T'], segs:[[0,56,'design','DESIGN.md and mockups','Design direction, then mockups of the first screens'],[56,98,'design light','One sprint ahead','Mockups ready one sprint before they are built']]},
-    {label:'1 · Creative storefront', who:['Al','P','T','A'], segs:[[14,42,'product','Profile, portfolio, prices','Profile, portfolio, services and prices, availability, deposit']]},
-    {label:'2 · Find a creative', who:['Al','P','M'], segs:[[42,70,'product','Search and filters','Search, full profile, advanced filters']]},
-    {label:'3 · Book and pay', who:['T','Al','P','A'], segs:[[56,84,'product','Booking, payment','Booking, Stripe payment in test mode, emails, personal spaces']]},
-    {label:'4 · Messaging', who:['Al','P','A'], segs:[[84,98,'product','Messages','Messaging between client and creative']]},
-    {label:'5 · Reviews', who:['T','M'], segs:[[84,98,'product','Reviews','Reviews from clients whose booking is confirmed']]},
-    {label:'Security and GDPR', who:['A'], segs:[[0,98,'quality light','Every sprint','Risk analysis, permissions, security reviews each sprint'],[98,126,'quality','Tests, report','Security tests, report and fix plan']]},
-    {label:'Data and indicators', who:['M'], segs:[[0,98,'quality light','Dictionary, indicators','Data dictionary, key indicators, usage tracking'],[98,112,'quality','Tests','User tests with clients and creatives']]},
-    {label:'6 · Production-ready beta', who:['P','A','M','Al','T'], segs:[[98,126,'deliver','Hardening','Fixes, final version to approve, feature freeze']]},
-    {label:'Handover and showroom', who:['P','A','M','Al','T'], segs:[[112,133,'deliver light','Handover','Handover documentation for the founders']], diamond:134}
+    {label:'Design and mockups', who:['T'], segs:[[0,42,'design','DESIGN.md and mockups','Design direction, then mockups of the MVP screens'],[42,112,'design light','One sprint ahead','Mockups ready one sprint before they are built']]},
+    {label:'1 · Creative storefront', who:['Al','P','T','A'], segs:[[14,28,'product','Storefront','Profile, portfolio, services and prices, availability, deposit']]},
+    {label:'2 · Find a creative', who:['Al','P','M'], segs:[[28,42,'product','Search','Search, full profile, advanced filters']]},
+    {label:'3 · Book and pay', who:['T','Al','P','A'], segs:[[42,56,'product','Book, pay','Booking, Stripe payment in test mode, emails, personal spaces']]},
+    {label:'4–5 · Messaging, reviews', who:['Al','P','T','A'], segs:[[56,70,'product','Messages','Messaging between client and creative; reviews once a booking is confirmed']]},
+    {label:'6 · MVP complete', who:['P','A','M','Al','T'], segs:[[70,84,'product','Tests, fixes','End-to-end tests, user tests, design audit and MVP fixes']]},
+    {label:'7 · Trust and session', who:['T','Al','P','A'], segs:[[84,98,'product','Trust','Validation code that releases the payment, SMS, full verification, map and geolocation']]},
+    {label:'8 · Community, businesses', who:['T','Al','P','A','M'], segs:[[98,112,'product','Community','Graine de Champion, Uvision Award, company and school accounts, calls for tenders']]},
+    {label:'9 · Announcements, AI, extras', who:['T','Al','P','M','A'], segs:[[112,126,'product','Posts, AI','Announcements, AI recommendations, other visual professions, secondary features']]},
+    {label:'Security and GDPR', who:['A'], segs:[[0,70,'quality light','Every sprint','Risk analysis, permissions, security reviews each sprint'],[70,84,'quality','MVP tests','MVP security tests and report v1'],[84,112,'quality light','New modules','Verification, two-factor authentication, vote fraud, permissions'],[112,133,'quality','Final tests','Final security tests, checklist and report']]},
+    {label:'Data and indicators', who:['M'], segs:[[0,70,'quality light','Dictionary, indicators','Data dictionary, key indicators, rules of the post-MVP modules'],[70,84,'quality','User tests','User tests with clients and creatives'],[84,126,'quality light','Dashboard, AI','Indicators dashboard, AI recommendations, data and AI roadmap']]},
+    {label:'10 · Handover and showroom', who:['P','A','M','Al','T'], segs:[[126,133,'deliver','','Fixes, handover pack and go-live procedure for the founders']], diamond:134}
   ];
   var school = [
     {s:'R2',name:'Follow-up meeting 2 and peer assessment 1',a:0,b:6,demo:'the PRD and the roadmap'},
-    {s:'R3',name:'Follow-up meeting 3 and peer assessment 2',a:42,b:48,demo:'a creative publishes a storefront'},
-    {s:'R4',name:'Follow-up meeting 4',a:70,b:76,demo:'filtered search, booking and test payment'},
-    {s:'R5',name:'Follow-up meeting 5, SSK hackathon week',a:84,b:90,demo:'the full six-step journey'},
+    {s:'R3',name:'Follow-up meeting 3 and peer assessment 2',a:42,b:48,demo:'a creative publishes a storefront; search with filters'},
+    {s:'R4',name:'Follow-up meeting 4',a:70,b:76,demo:'booking and test payment, messaging, reviews'},
+    {s:'R5',name:'Follow-up meeting 5, SSK hackathon week',a:84,b:90,demo:'the complete MVP, tested end to end'},
     {s:'PA3',name:'Peer assessment 3',a:105,b:111,demo:null},
-    {s:'R6',name:'Follow-up meeting 6',a:112,b:118,demo:'the beta with messaging and reviews'},
-    {s:'Closing',name:'Closing meeting',a:126,b:139,demo:'the showroom on 6 April'}
+    {s:'R6',name:'Follow-up meeting 6',a:112,b:118,demo:'validation code, verification, map, Graine de Champion, Award, company and school accounts'},
+    {s:'Closing',name:'Closing meeting',a:126,b:139,demo:'the whole specification, at the showroom on 6 April'}
   ];
 
   function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
@@ -344,25 +356,25 @@ footer{font-size:13px;color:var(--muted)}
 
   var ledger=[
     {code:'S0',a:0,b:14,title:'Framing and foundations',tags:[['school','Follow-up meeting 2 · we present the PRD and the roadmap']],
-     t:{P:'Architecture diagram v1, data model v1, development, test and production environments',A:'Risk analysis v1, threat model v1, permissions matrix (client, creative, admin)',M:'Data dictionary v1, key indicators, recruiting beta testers among the survey respondents',Al:'Project foundation (Next.js, TypeScript, Tailwind), automatic code checks, user sign-in, French and English',T:'Stripe Connect study, financial rules (statuses, deposit, commission, refunds), design direction (DESIGN.md)'}},
-    {code:'S1',a:14,b:28,title:'Creative storefront, part 1',tags:[],
-     t:{Al:'Sign-up and sign-in screens, creative profile and portfolio',P:'Tables for users, profiles and portfolios; image storage',A:'Securing sign-in, account recovery and file uploads',T:'Mockups of sign-up and the storefront; rules for services and prices',M:'French and English copy; demo data (all of France, 12 categories)'}},
-    {code:'S2',a:28,b:42,title:'Creative storefront, part 2',tags:[['goal','Goal: milestone 1, the creative storefront']],
-     t:{T:'Services and prices, deposit settings, Stripe payment account in test mode',Al:'Screens for services, prices and the availability calendar',P:'Availability and slot model',A:'Access checks (a creative can only edit their own data), phone verification',M:'Usage tracking plan feeding the key indicators'}},
-    {code:'S3',a:42,b:56,title:'Find a creative',tags:[['school','Follow-up meeting 3 · demo: a creative publishes a storefront']],
-     t:{Al:'Search page, profile card, full profile',P:'Search by category, budget, type, name, city and postcode; result speed',M:'Result ranking, filter definitions, handling searches with no results, recommendation study v1',T:'Mockups of search and profile; technical description of bookings',A:'Server security review; personal data visible on public profiles'}},
-    {code:'S4',a:56,b:70,title:'Filters, then book and pay',tags:[['goal','Goal: milestone 2, find a creative']],
-     t:{Al:'Advanced filters, including availability',T:'Bookings and statuses, deposit or full payment in test mode, 5% commission, automated tests of the financial rules',P:'Tables for bookings, payments and transaction history',A:'Payment risks, checking Stripe notifications, protecting access keys',M:'Mockup of the key indicators dashboard'}},
-    {code:'S5',a:70,b:84,title:'Book and pay, continued',tags:[['school','Follow-up meeting 4 · demo: filtered search, booking and test payment'],['goal','Goal: milestone 3, book and pay']],
-     t:{T:'Reliable Stripe notifications; cancellations, refunds, declined payments; booking emails',Al:'Booking journey, client and creative personal spaces',P:'Email sending, shared test environment',A:'Authorisation tests: nobody can reach someone else\'s booking',M:'User test protocol, schedule of the S7 sessions'}},
-    {code:'S6',a:84,b:98,title:'Messaging and reviews',tags:[['school','Follow-up meeting 5 · demo: the full six-step journey'],['school','SSK hackathon week'],['goal','Goal: milestones 4 and 5, messaging and reviews']],
-     t:{Al:'Messaging screens',P:'Message storage and delivery',T:'Reviews from clients whose booking is confirmed; message notifications',A:'Anti-abuse rules, detecting contact details shared in messages, GDPR retention periods',M:'Review indicators, check of French and English copy'}},
-    {code:'S7',a:98,b:112,title:'Hardening and user tests',tags:[['school','Peer assessment 3']],
-     t:{A:'Security tests, report v1',M:'User tests with clients, then with survey creatives; findings summary',T:'Design critique and audit on phone, tablet and desktop; fixes; financial flow documentation',Al:'Fixes, checks on phone and desktop, automated journey tests',P:'Production environment, backups, monitoring'}},
-    {code:'S8',a:112,b:126,title:'Final version to approve, feature freeze',tags:[['school','Follow-up meeting 6 · demo: the beta with messaging and reviews'],['goal','Goal: milestone 6, production-ready beta']],
-     t:{A:'Fix plan and incident plan, final security checklist',P:'Final architecture and database documentation, installation instructions',T:'Technical documentation of the server and the financial flows',Al:'Code documentation, list of known issues',M:'Final data dictionary, data and AI roadmap, recommendations'}},
-    {code:'S9',a:126,b:133,title:'Showroom and handover',tags:[['school','Closing meeting (29 Mar – 10 Apr)'],['school','Showroom on 6 April']],
-     t:{P:'Project installation, access to the code and environments for the founders',A:'Final security report and remaining risks',M:'Showroom material and recommendations for what comes next',Al:'Demo script and demo data',T:'Feature status and roadmap for the next steps'}}
+     t:{P:'Architecture diagram v1, data model v1 ready to take the later modules, development, test and production environments',A:'Risk analysis v1, threat model v1, permissions matrix (client, creative, admin, then company and school)',M:'Data dictionary v1, key indicators, recruiting beta testers among the survey respondents',Al:'Project foundation (Next.js, TypeScript, Tailwind), automatic code checks, user sign-in, French and English',T:'Progress tracking on GitHub for the founders (milestones, one issue per deliverable), Stripe Connect study, financial rules (statuses, deposit, 5% or 2% commission deducted from the payout, refunds, validation code), design direction (DESIGN.md)'}},
+    {code:'S1',a:14,b:28,title:'Creative storefront',tags:[['goal','Goal: milestone 1, the creative storefront']],
+     t:{Al:'Sign-up and sign-in, creative profile, portfolio, Behance or website link, services and prices, availability calendar',P:'Tables for users, profiles, portfolios, services and availability; image storage',A:'Securing sign-in, account recovery and uploads; a creative can only edit their own data; phone verification; student status through a partner school email',T:'Mockups of sign-up, the storefront and search; services and prices; deposit settings; Stripe account in test mode',M:'French and English copy; demo data (all of France, 12 categories); usage tracking plan'}},
+    {code:'S2',a:28,b:42,title:'Find a creative',tags:[['goal','Goal: milestone 2, find a creative']],
+     t:{Al:'Search page, profile card, full profile, advanced filters including « experienced »',P:'Search by category, budget, type, name, city and postcode, with filters; result speed',M:'Result ranking, filter definitions including the « experienced » threshold, handling searches with no results, recommendation study v1',T:'Mockups of booking, personal spaces and messaging; technical description of bookings',A:'Server security review; personal data visible on public profiles'}},
+    {code:'S3',a:42,b:56,title:'Book and pay',tags:[['school','Follow-up meeting 3 · demo: a creative publishes a storefront, search with filters'],['goal','Goal: milestone 3, book and pay']],
+     t:{T:'Bookings and statuses, deposit or full payment in test mode, 5% or 2% commission, reliable Stripe notifications, cancellations and refunds',Al:'Booking journey, client and creative personal spaces',P:'Tables for bookings, payments and transactions; email sending',A:'Payment risks, checking Stripe notifications, protecting access keys; nobody can reach someone else\'s booking',M:'Mockup of the key indicators dashboard; user test protocol'}},
+    {code:'S4',a:56,b:70,title:'Messaging and reviews',tags:[['goal','Goal: milestones 4 and 5, messaging and reviews']],
+     t:{Al:'Messaging and review screens',P:'Message storage and delivery, notifications',T:'Reviews from clients whose booking is confirmed; booking emails; mockups of the validation code, verification and map',A:'Anti-abuse rules, detecting contact details shared in messages, GDPR retention periods',M:'Review indicators; Graine de Champion rules for the founders to validate'}},
+    {code:'S5',a:70,b:84,title:'MVP complete',tags:[['school','Follow-up meeting 4 · demo: booking and test payment, messaging, reviews'],['goal','Goal: milestone 6, the complete MVP']],
+     t:{Al:'Automated tests of the whole journey, fixes on phone and desktop',T:'Design critique and audit, fixes; declined payments; rules for the validation code and payment release',P:'Shared test environment; data model v2 for the later modules',A:'MVP security tests, report v1; rules for full verification (identity, SIRET, IBAN, two-factor)',M:'User tests with clients and survey creatives; rules for the Award and for matching announcements'}},
+    {code:'S6',a:84,b:98,title:'Trust and session',tags:[['school','Follow-up meeting 5 · demo: the complete MVP'],['school','SSK hackathon week'],['goal','Goal: milestone 7, trust and session']],
+     t:{T:'Validation code that releases the payment; SMS confirmation of bookings',Al:'Map of results and geolocation; validation code screens',P:'Location search; SMS provider',A:'Full verification (identity document, SIRET, IBAN), two-factor authentication',M:'User test findings; content for the FAQ, « le saviez-vous » and partners page'}},
+    {code:'S7',a:98,b:112,title:'Community and businesses',tags:[['school','Peer assessment 3'],['goal','Goal: milestone 8, community and businesses']],
+     t:{T:'Graine de Champion: points, levels, rankings, badges, yearly rewards; billing for company and school accounts; mockups of announcements',Al:'Graine de Champion and Uvision Award screens; company and school account screens',P:'Calls for tenders and casting; Award voting',A:'Vote fraud prevention, permissions for company and school accounts, security tests',M:'Rankings and yearly recap indicators; key indicators dashboard'}},
+    {code:'S8',a:112,b:126,title:'Announcements, AI and extras, feature freeze',tags:[['school','Follow-up meeting 6 · demo: validation code, verification, map, Graine de Champion, Award, company and school accounts'],['goal','Goal: milestone 9, announcements, AI and extras']],
+     t:{T:'Announcements: a client posts a need, creatives apply, the client picks one and pays; promo codes',Al:'Announcement screens and creatives\' feed; favourites, FAQ, blog, partners page, comparison, account deactivation',P:'Matching announcements to creatives; other visual professions; final architecture and database documentation',M:'AI recommendations v1, final data dictionary, data and AI roadmap',A:'Security of announcements, final security tests, incident plan, final security checklist'}},
+    {code:'S9',a:126,b:133,title:'Stabilisation and handover',tags:[['school','Closing meeting (29 Mar – 10 Apr)'],['school','Showroom on 6 April'],['goal','Goal: milestone 10, ready for the founders to launch']],
+     t:{P:'Installation instructions, go-live procedure (live payment keys, domain, environments), access for the founders',A:'Final security report and remaining risks',M:'Showroom material, recommendations for the founders',Al:'Demo script and data, code documentation, known issues',T:'Feature status against the specification, server and financial flow documentation'}}
   ];
   var order=['P','A','M','Al','T'];
   var L=document.getElementById('ledger');
@@ -396,16 +408,16 @@ footer{font-size:13px;color:var(--muted)}
     var when = next.a<=TODAY ? 'This week' : 'From '+fmt(next.a)+' to '+fmt(next.b-1);
     S.appendChild(cell('Next school meeting', next.name, when+(next.demo?'. Demo: <b>'+next.demo+'</b>.':'.')));
   }
-  var dl18=56-TODAY;
-  if(dl18>0){ S.appendChild(cell('Decisions expected from the founders','4 decisions','Before <b>18 January</b>, in '+dl18+' days. <a href="#decisions">See the decisions</a>')); }
+  var dl18=42-TODAY;
+  if(dl18>0){ S.appendChild(cell('Decisions expected from the founders','5 decisions','Before <b>4 January</b>, in '+dl18+' days. <a href="#decisions">See the decisions</a>')); }
   var mine=cell('', '', ' ', 'st-mine'); mine.hidden=true; S.appendChild(mine);
 
   var team=[
-    {k:'P',role:'Project lead, cloud architecture, database',d:[['Architecture diagram','S0, final S8'],['Data model','S0, final S8'],['Technical documentation','S8']]},
-    {k:'A',role:'Cybersecurity',d:[['Risk analysis, threat model','S0, revised S4'],['Permissions matrix','S0'],['Security test report','S7'],['Security checklist','S8']]},
-    {k:'M',role:'Data, AI and communication',d:[['Data dictionary','S0, final S8'],['Key indicators','S0, dashboard S4'],['Recommendation proposals','S3'],['Needs study (user tests)','S7'],['Data and AI roadmap','S8']]},
-    {k:'Al',role:'Full-stack, interfaces',d:[['Interfaces connected to the server','S1 to S6'],['Functional tests','S7'],['Code documentation','S8']]},
-    {k:'T',role:'Full-stack fintech, payments and design',d:[['Financial rules','S0'],['DESIGN.md and mockups','S0, then one sprint ahead'],['Server features (bookings, payments)','S2 to S6'],['Test-mode payment','S4 – S5'],['Flow documentation','S8']]}
+    {k:'P',role:'Project lead, cloud architecture, database',d:[['Architecture diagram','S0, final S8'],['Data model','S0, v2 S5, final S8'],['Technical documentation, go-live procedure','S8 – S9']]},
+    {k:'A',role:'Cybersecurity',d:[['Risk analysis, threat model','S0, revised S3 and S5'],['Permissions matrix','S0, extended S7'],['Security test report','v1 S5, final S9'],['Security checklist','S8']]},
+    {k:'M',role:'Data, AI and communication',d:[['Data dictionary','S0, final S8'],['Key indicators','S0, dashboard S7'],['Recommendation proposals','S2, AI in S8'],['Needs study (user tests)','S5'],['Data and AI roadmap','S8']]},
+    {k:'Al',role:'Full-stack, interfaces',d:[['Interfaces connected to the server','S1 to S8'],['Functional tests','S5, then each sprint'],['Code documentation','S9']]},
+    {k:'T',role:'Full-stack fintech, payments and design',d:[['Progress tracking on GitHub','S0, then each sprint'],['Financial rules','S0'],['DESIGN.md and mockups','S0, then one sprint ahead'],['Server features','S1 to S8'],['Test-mode payment','S3 – S5'],['Flow documentation','S9']]}
   ];
   var T=document.getElementById('team');
   team.forEach(function(p){
